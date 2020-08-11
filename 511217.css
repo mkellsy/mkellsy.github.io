@@ -1,0 +1,799 @@
+#dbi {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-bottom: 50px transparent solid;
+    font-weight: 300;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#dbi input,
+#dbi select,
+#dbi textarea {
+    border-radius: 3px;
+}
+
+#dbi input:focus,
+#dbi select:focus,
+#dbi textarea:focus {
+    border-color: #638e46 !important;
+}
+
+#dbi .AutocompleteField {
+    width: 100%;
+    border-radius: unset;
+    background: unset;
+}
+
+#dbi .AutocompleteField td:first-child input[type='text'] {
+    border-radius: 3px 0 0 0 !important;
+}
+
+#dbi .AutocompleteField td:last-child span {
+    height: 32px;
+    border-top: 0 none !important;
+    border-right: 0 none !important;
+    border-bottom: 1px #d4d4d4 solid !important;
+    border-left: 0 none !important;
+    border-radius: 0 3px 0 0 !important;
+    line-height: normal;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 0 0 1px 3px;
+    background: #fbfbfb;
+}
+
+#dbi .AutocompleteField:focus-within td:last-child span {
+    border-bottom: 2px #638e46 solid !important;
+}
+
+#dbi .svs-button svg {
+    margin: 0 4px 0 0
+}
+
+#dbi .svs-button-primary,
+#dbi .svs-button-primary:link,
+#dbi .svs-button-primary:active,
+#dbi .svs-button-primary:visited {
+    background: #638e46;
+    border: 1px #638e46 solid;
+}
+
+#dbi .svs-active-tab {
+    border-bottom: 4px solid #638e46;
+}
+
+#dbi .content {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#dbi .content .search {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 20px 7px 20px;
+}
+
+#dbi .content .search .field {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+#dbi .content .search .field input {
+    flex: 1;
+    height: 40px !important;
+    box-sizing: border-box;
+    border-radius: 0 !important;
+    border-top: 1px #d4d4d4 solid !important;
+    border-right: 0 none !important;
+    border-bottom: 1px #d4d4d4 solid !important;
+    border-left: 0 none !important;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+#dbi .content .search .field:focus-within input {
+    border-top: 1px #638e46 solid !important;
+    border-bottom: 1px #638e46 solid !important;
+}
+
+#dbi .content .search .field .submit {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin: 0 !important;
+    padding: 0 10px;
+    cursor: pointer;
+    user-select: none;
+    background: #638e46;
+    border-top: 0 none;
+    border-right: 0 none;
+    border-bottom: 0 none;
+    border-radius: 0 3px 3px 0;
+    border-left: 1px #638e46 solid;
+    color: #fff;
+}
+
+#dbi .content .search .field .icon {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    padding: 0 5px 0 10px;
+    border-top: 1px #d4d4d4 solid;
+    border-right: 0 none;
+    border-bottom: 1px #d4d4d4 solid;
+    border-left: 1px #d4d4d4 solid;
+    border-radius: 3px 0 0 3px;
+}
+
+#dbi .content .search .field:focus-within .icon {
+    border-top: 1px #638e46 solid;
+    border-bottom: 1px #638e46 solid;
+    border-left: 1px #638e46 solid;
+}
+
+#dbi .content .search .svs-button {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    padding: 0 10px 0 7px;
+    margin: 0 10px 0 0;
+}
+
+#dbi .content .layout {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 0 20px;
+    overflow: hidden;
+}
+
+#dbi .content .data {
+    flex: 1;
+    overflow: hidden;
+    padding: 0 20px 20px 0;
+}
+
+#dbi .content .data:hover {
+    overflow: overlay;
+}
+
+#dbi .content .data-left {
+    flex: unset;
+    width: 17%;
+    min-width: 400px;
+}
+
+#dbi .content .data-left .left-compact {
+    max-width: 225px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+#dbi .content .data-left .left-compact-hide {
+    display: none;
+}
+
+#dbi .content .data .svs-table {
+    width: 100%;
+    padding: 0;
+    position: relative;
+}
+
+#dbi .content .data .svs-table thead tr th {
+    top: 0;
+    position: sticky;
+    white-space: nowrap;
+    background: #ffffff;
+    background: linear-gradient(0deg, #ffffffee 0%, #fff 80%, #fff 100%);
+}
+
+#dbi .content .data .svs-table tbody tr td {
+    height: 60px;
+    white-space: nowrap;
+}
+
+#dbi .content .data .svs-table tr .data-press {
+    width: 60%;
+}
+
+#dbi .content .data .svs-table tr .data-full-press {
+    width: 100%;
+}
+
+#dbi .content .data .svs-table tr .data-right {
+    text-align: right;
+}
+
+#dbi .content .data .svs-table tr .data-center {
+    text-align: center;
+}
+
+#dbi .content .data .svs-table tr .data-shrink {
+    width: 10px;
+}
+
+#dbi .content .data .text-dim {
+    opacity: 0.3;
+}
+
+#dbi .content .data-panel {
+    padding: 0;
+}
+
+#dbi .content .svs-table .row-form {
+    display: none;
+}
+
+#dbi .content .svs-table .row-form td {
+    padding: 20px;
+}
+
+#dbi .content .svs-table .row-form:hover td {
+    background: #fff;
+}
+
+#dbi .content .data .empty {
+    height: 100px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+#dbi .content .data .empty .message {
+    display: inline;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#dbi .content .details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 20px 5px;
+    overflow: hidden;
+}
+
+#dbi .content .details:hover {
+    overflow: overlay;
+}
+
+#dbi .content .details h1 {
+    font-size: 17px;
+    padding: 0 0 4px 0;
+    margin: 20px 0 0 0;
+    font-weight: 400;
+}
+
+#dbi .content .details h1:first-child {
+    margin: 2px 0 0 0;
+}
+
+#dbi .content .details h2 {
+    font-size: 15px;
+    padding: 0 0 4px 0;
+    margin: 20px 0 0 0;
+    font-weight: 400;
+}
+
+#dbi .content .details .fieldset {
+    padding: 20px;
+    border: 1px #d4d4d4 solid;
+    border-radius: 3px;
+}
+
+#dbi .content .details .section {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+#dbi .content .details .fields {
+    flex: 1;
+}
+
+#dbi .content .details .sidecar {
+    margin: 0 0 0 20px;
+}
+
+#dbi .content .details .logo {
+    width: 283px;
+    height: 283px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    border: 1px #d4d4d4 solid;
+    border-radius: 3px;
+    padding: 14px;
+}
+
+#dbi .content .details .logo img {
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0 auto;
+}
+
+#dbi .content .details .image {
+    width: 133px;
+    height: 133px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    border: 1px #d4d4d4 solid;
+    border-radius: 3px;
+    padding: 14px;
+}
+
+#dbi .content .details .image img {
+    height: unset !important;
+    max-width: 100px;
+    max-height: 100px;
+    margin: 0 auto;
+}
+
+#dbi .content .details .logo .actions,
+#dbi .content .details .image .actions {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#dbi .content .details .logo input[type='file'],
+#dbi .content .details .image input[type='file'] {
+    opacity: 0;
+    width: 60px !important;
+    height: 45px !important;
+    padding: 0 !important;
+    border: 0 none !important;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#dbi .content .details .row {
+    display: flex;
+    flex-direction: row;
+}
+
+#dbi .content .details .row .svs-button {
+    margin: 5px;
+}
+
+#dbi .content .details .row .actions {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+}
+
+
+#dbi .content .details .row-seperator {
+    padding: 4px 0 10px 0;
+    margin: 0 0 10px 0;
+    border-bottom: 1px #e5e5e5 solid;
+}
+
+#dbi .content .details .row input[type='file'] {
+    opacity: 0;
+    width: 110px !important;
+    height: 45px !important;
+    padding: 0 !important;
+    border: 0 none !important;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+#dbi .content .details .dist-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#dbi .content .details .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px 5px 5px;
+    min-height: 71px;
+}
+
+#dbi .content .details .field .title {
+    font-size: 12px;
+    color: #727272;
+    margin-bottom: 5px;
+}
+
+#dbi .content .details .field input,
+#dbi .content .details .field select,
+#dbi .content .details .field textarea {
+    height: 32px !important;
+    background: #fbfbfb;
+    border-radius: 3px 3px 0 0;
+    border-top: 0 none !important;
+    border-right: 0 none !important;
+    border-bottom: 1px #d4d4d4 solid !important;
+    border-left: 0 none !important;
+    padding: 5px;
+    width: 100%;
+    resize: none;
+    font-size: 14px;
+}
+
+#dbi .content .details .field textarea {
+    height: 164px !important;
+}
+
+#dbi .content .details .field input:focus,
+#dbi .content .details .field select:focus,
+#dbi .content .details .field textarea:focus {
+    border-bottom: 2px #638e46 solid !important;
+    padding: 5px 5px 4px 5px;
+}
+
+#dbi .content .details .field input::placeholder,
+#dbi .content .details .field textarea::placeholder {
+  color: #dbdbdb;
+}
+
+#dbi .content .details .field .disabled {
+    font-size: 14px;
+    padding: 5px;
+}
+
+#dbi .content .details .field svg {
+    height: 80px;
+    min-height: 80px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    padding: 10px 0;
+    border: 1px #d4d4d4 solid;
+}
+
+#dbi .content .fieldset .svs-table {
+    width: 100%;
+}
+
+#dbi .content .fieldset .svs-table thead tr th {
+    position: unset;
+    top: unset;
+    background: #ffffff;
+}
+
+#dbi .content .fieldset .svs-table tbody tr td img {
+    height: 40px;
+}
+
+#dbi .queue {
+    width: 25%;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 20px 5px;
+    overflow: hidden;
+}
+
+#dbi .queue h1 {
+    font-size: 17px;
+    padding: 7px 0;
+    margin: 0;
+    font-weight: 400;
+}
+
+#dbi .queue .queue-inner {
+    flex: 1;
+    padding: 20px;
+    border: 1px #d4d4d4 solid;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+#dbi .queue .queue-inner:hover {
+    overflow: overlay;
+}
+
+#dbi .queue-table {
+    width: 100%;
+    flex: 1 1 0%;
+}
+
+#dbi .queue-table tr td {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    text-align: left;
+    color: rgb(94, 94, 94);
+    cursor: default;
+    padding: 7px 20px;
+    border-bottom: 1px solid rgb(231, 231, 231);
+}
+
+#dbi .queue-table h2 {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+#dbi .queue-table h3 {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+#dbi .queue-table .queue-details {
+    font-size: 12px;
+}
+
+#dbi .queue-table .queue-status {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#dbi .queue-empty {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+#dbi .dialog-message {
+    max-width: 500px;
+    margin: 0 0 10px 0;
+    font-size: 17px;
+}
+
+#dbi .alert-message {
+    width: 100%;
+    margin: 31px 0;
+    text-align: center;
+    font-size: 17px;
+}
+
+#dbi .svs-dialog .fieldset {
+    padding: 7px;
+    border: 1px #d4d4d4 solid;
+    border-radius: 3px;
+}
+
+#dbi .svs-dialog .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px 5px 5px;
+    min-height: 71px;
+}
+
+#dbi .svs-dialog .field .title {
+    font-size: 12px;
+    color: #727272;
+    margin-bottom: 5px;
+}
+
+#dbi .svs-dialog .field input,
+#dbi .svs-dialog .field select,
+#dbi .svs-dialog .field textarea {
+    height: 32px !important;
+    background: #fbfbfb;
+    border-radius: 3px 3px 0 0;
+    border-top: 0 none !important;
+    border-right: 0 none !important;
+    border-bottom: 1px #d4d4d4 solid !important;
+    border-left: 0 none !important;
+    padding: 5px;
+    width: 100%;
+    resize: none;
+    font-size: 14px;
+}
+
+#dbi .svs-dialog .field textarea {
+    height: 164px !important;
+}
+
+#dbi .svs-dialog .field input:focus,
+#dbi .svs-dialog .field select:focus,
+#dbi .svs-dialog .field textarea:focus {
+    border-bottom: 2px #638e46 solid !important;
+    padding: 5px 5px 4px 5px;
+}
+
+#dbi .svs-dialog .field input::placeholder,
+#dbi .svs-dialog .field textarea::placeholder {
+  color: #dbdbdb;
+}
+
+#dbi .svs-dialog .field .disabled {
+    font-size: 14px;
+    padding: 5px;
+}
+
+#dbi .debug {
+    height: 300px;
+    display: flex;
+    background: #fdfdfd;
+    border-top: 1px #d4d4d4 solid;
+}
+
+#dbi .debug pre {
+    flex: 1;
+    padding: 20px 0 20px 20px;
+    overflow: hidden;
+}
+
+#dbi .debug pre:hover {
+    overflow: overlay;
+}
+
+#dbi .debug .actions {
+    padding: 20px;
+}
+
+#dbi .spinner {
+    height: 50%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+#dbi .spinner .inner {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+#dbi .spinner .inner .grid,
+#dbi .spinner .inner .grid > div {
+    position: relative;
+    box-sizing: border-box;
+}
+
+#dbi .spinner .inner .grid {
+    display: block;
+    font-size: 0;
+    color: #638e46;
+}
+
+#dbi .spinner .inner .grid > div {
+    display: inline-block;
+    float: none;
+    background-color: currentColor;
+    border: 0 solid currentColor;
+}
+
+#dbi .spinner .inner .grid {
+    width: 36px;
+    height: 36px;
+}
+
+#dbi .spinner .inner .grid > div {
+    width: 8px;
+    height: 8px;
+    margin: 2px;
+    border-radius: 100%;
+    animation-name: grid-beat;
+    animation-iteration-count: infinite;
+}
+
+#dbi .spinner .inner .grid > div:nth-child(1) {
+    animation-duration: .65s;
+    animation-delay: .03s;
+}
+
+#dbi .spinner .inner .grid > div:nth-child(2) {
+    animation-duration: 1.02s;
+    animation-delay: .09s;
+}
+
+#dbi .spinner .inner .grid > div:nth-child(3) {
+    animation-duration: 1.06s;
+    animation-delay: -.69s;
+}
+
+#dbi .spinner .inner .grid > div:nth-child(4) {
+    animation-duration: 1.5s;
+    animation-delay: -.41s;
+}
+
+#dbi .spinner .inner .grid > div:nth-child(5) {
+    animation-duration: 1.6s;
+    animation-delay: .04s;
+}
+
+#dbi .spinner .inner .grid > div:nth-child(6) {
+    animation-duration: .84s;
+    animation-delay: .07s;
+}
+
+#dbi .spinner .inner .grid > div:nth-child(7) {
+    animation-duration: .68s;
+    animation-delay: -.66s;
+}
+
+#dbi .spinner .inner .grid > div:nth-child(8) {
+    animation-duration: .93s;
+    animation-delay: -.76s;
+}
+
+#dbi .spinner .inner .grid > div:nth-child(9) {
+    animation-duration: 1.24s;
+    animation-delay: -.76s;
+}
+
+@-webkit-keyframes grid-beat {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .35;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes grid-beat {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .35;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes grid-beat {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .35;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes grid-beat {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .35;
+    }
+    100% {
+        opacity: 1;
+    }
+}

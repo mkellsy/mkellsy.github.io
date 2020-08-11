@@ -1,0 +1,240 @@
+#Header {
+    background: #638e46;
+    border-top: 0px transparent solid;
+    box-shadow: none;
+}
+
+#Header .Logo {
+    background-image: url(https://images.encompass8.com/GlobalDocs/515074.png);
+}
+
+#Header .LabelButton {
+    background: #638e46;
+    color: #fff;
+    opacity: 0.85;
+}
+
+#Header .LabelButton:hover {
+    background: #638e46 !important;
+    color: #fff;
+    opacity: 1;
+}
+
+#Header .Application,
+#Header .Title {
+    color: #fff;
+}
+
+.Application.MenuButton:hover {
+    background: #638e46 !important;
+    opacity: 1;
+}
+
+.Application.MenuOpened {
+    background: #496f2f !important;
+}
+
+.Application.MenuOpened:hover {
+    background: #496f2f !important;
+}
+
+#Menu {
+    box-shadow: none;
+    -ms-overflow-style: none;
+}
+
+#Menu.MenuOpened {
+    background: #f4f4f4;
+}
+
+#Menu::-webkit-scrollbar {
+    display: none;
+}
+
+#Menu .CategoryHighlight {
+    border-top: 0 none;
+    border-bottom: 0 none;
+    background: #e5e5e5 !important;
+}
+
+#Menu.MenuCollapsed {
+    border-right: 2px solid #fff;
+    background: #fff;
+}
+
+#UnifiedSearch {
+    background: #638e46;
+    margin-left: 7px !important;
+}
+
+#UnifiedSearch .ews-input-ajax-search .ews-input-action {
+    border-left: 0 none;
+    color: #fff;
+    top: 0px;
+    right: 7px !important;
+    background: transparent;
+    cursor: pointer;
+}
+
+#UnifiedSearch .ews-input-ajax-search input[type=text] {
+    border: 0 none;
+    color: #fff;
+    border-radius: 3px !important;
+    background: #ffffff4f;
+    box-shadow: unset;
+}
+
+#UnifiedSearch .ews-input-ajax-search input[type=text]:focus {
+    border: 0 none !important;
+    outline: 0 none !important;
+}
+
+#UnifiedSearch .ews-input-ajax-search input[type=text]::placeholder {
+    color: #fff9;
+}
+
+#Header .search-box input[type=text] {
+    border-radius: 3px;
+    background: #ffffff4f;
+    padding: 0 32px 0 7px;
+    border: 0 none;
+}
+
+#Header .search-box input[type=text]:focus,
+#Header .search-box input[type=text]:hover {
+    border: 0 none !important;
+}
+
+#Header .search-box input[type=text]::placeholder {
+    color: #fff9;
+}
+
+#Header .search-box .ews-input-action {
+    background: unset !important;
+    border: 0 none !important;
+    width: auto !important;
+    border-radius: 0 !important;
+    right: 4px;
+}
+
+#Content .Inner {
+    overflow: hidden;
+}
+
+.MainLayout td.MainLayoutCell {
+    background-color: #fff;
+}
+
+.MainLayoutHeader {
+    padding: 0 20px;
+    background: #fff;
+}
+
+.MainLayoutTabs {
+    border-top: 0 none;
+    border-bottom: 1px #d4d4d4 solid;
+}
+
+@media (min-width: 300px) and (max-width: 815px) {
+    .MainLayoutTabs:after {
+        content: "";
+        display: unset;
+        width: unset;
+        height: unset;
+        background: unset;
+    }
+}
+
+.MainLayoutTabs .PageTab {
+    height: 46px;
+    line-height: 45px;
+    padding: 0rem 0.5rem;
+    top: 1px;
+    width: auto;
+    min-height: unset;
+    border-right: 0 none;
+    border-bottom: 0 none;
+    border-top: 0 none;
+}
+
+.MainLayoutTabs .PageTab:hover {
+    border-bottom: 0 none;
+}
+
+.MainLayoutTabs .PageTab.Active .InnerTab {
+    border-bottom: 2px solid #638e46 !important;
+}
+
+.MainLayoutTabs .PageTab:hover, .MainLayoutTabs .PageTab:hover .InnerTab, .MainLayoutTabs .InnerTab:hover {
+    border-bottom: 0 none !important;
+}
+
+.MainLayoutTabs .PageTab.Active .InnerTab:hover {
+    border-bottom: 2px solid #638e46 !important;
+}
+
+.MainLayoutTabs .Active .InnerTab {
+    line-height: unset !important;
+}
+
+.custom-walkme-shell, .walkme-custom-icon-outer-div {
+    display: none !important;
+}
+
+.MainLayoutActions {
+    background: #fff !important;
+}
+
+.AutocompleteMenu {
+    border-radius: 0px;
+    border: 1px solid #bbb;
+}
+
+.ews-dashboard-details .ews-fieldset {
+    background: #fff;
+    border-radius: 0px;
+    border-bottom: 0 none;
+    border-right: 0 none;
+    border-left: 0 none;
+}
+
+.ews-dashboard-details .ews-fieldset legend {
+    margin: 0;
+    background: #fff;
+    padding: 0 7px 0 0;
+    color: #000;
+}
+
+.dashboard-hide-info {
+    color: #638e46;
+}
+
+.ews-dashboard-library-item {
+    background: #fff !important;
+}
+
+.ews-dashboard-library-item:hover {
+    background: #fff !important;
+}
+
+#dashboard-item-library .dashboard-library-item .dashboard-hide-item-category {
+    top: 2px;
+    right: 2px;
+    color: #638e46;
+}
+
+#dashboard-item-library .drag {
+    color: #000;
+    background: #fff;
+    text-shadow: unset;
+    font-weight: normal;
+    border: 1px #d4d4d4 solid;
+    border-radius: 3px;
+    padding: 4px;
+    top: 3px;
+    right: 7px;
+}
+
+.dashboard-item:not(.edit-display).hide-header .content {
+    overflow: hidden;
+}
