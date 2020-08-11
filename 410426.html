@@ -1,0 +1,1280 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        html,
+        body {
+            font-family: 'Roboto', sans-serif;
+            height: 100%;
+            color: #fff;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        body {
+            min-height: 100%;
+            overflow: hidden;
+            background-color: #000
+        }
+
+        @-webkit-keyframes move {
+            100% {
+                -webkit-transform: translate3d(0, 0, -1000px);
+                transform: translate3d(0, 0, -1000px);
+            }
+        }
+
+        @keyframes move {
+            100% {
+                -webkit-transform: translate3d(0, 0, -1000px);
+                transform: translate3d(0, 0, -1000px);
+            }
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 5%;
+            left: 4%;
+            height: 5%;
+        }
+
+        .fill {
+            fill: #fff;
+        }
+
+        .display {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .inner {
+            display: flex;
+            padding: 2%;
+        }
+
+        .bordered {
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            padding: 20px 40px;
+            white-space: nowrap;
+            background-color: #00000099;
+            color: #fff;
+        }
+
+        #date {
+            font-size: calc(20px + 4 * ((100vw - 1920px) / 1080));
+        }
+
+        #time {
+            font-size: calc(70px + 4 * ((100vw - 1920px) / 1080));
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            min-height: 100%;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .bubble-wrap {
+            margin: 0 auto;
+            width: 500px;
+            height: 500px;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            -webkit-perspective: 600px;
+            perspective: 600px;
+        }
+
+        .bubble {
+            position: absolute;
+            background: black;
+            opacity: .7;
+            border-radius: 50%;
+            -webkit-animation: move 3s infinite;
+            animation: move 3s infinite;
+        }
+
+        .bubble:nth-child(1) {
+            height: 2px;
+            width: 2px;
+            -webkit-animation-delay: -0.2s;
+            animation-delay: -0.2s;
+            -webkit-transform: translate3d(636px, 366px, 1128px);
+            transform: translate3d(636px, 366px, 1128px);
+            background: #26c7d9;
+        }
+
+        .bubble:nth-child(2) {
+            height: 9px;
+            width: 9px;
+            -webkit-animation-delay: -0.4s;
+            animation-delay: -0.4s;
+            -webkit-transform: translate3d(261px, 959px, 1672px);
+            transform: translate3d(261px, 959px, 1672px);
+            background: #c426d9;
+        }
+
+        .bubble:nth-child(3) {
+            height: 8px;
+            width: 8px;
+            -webkit-animation-delay: -0.6s;
+            animation-delay: -0.6s;
+            -webkit-transform: translate3d(839px, 286px, 1415px);
+            transform: translate3d(839px, 286px, 1415px);
+            background: #b2d926;
+        }
+
+        .bubble:nth-child(4) {
+            height: 17px;
+            width: 17px;
+            -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+            -webkit-transform: translate3d(520px, 200px, 972px);
+            transform: translate3d(520px, 200px, 972px);
+            background: #8e26d9;
+        }
+
+        .bubble:nth-child(5) {
+            height: 28px;
+            width: 28px;
+            -webkit-animation-delay: -1s;
+            animation-delay: -1s;
+            -webkit-transform: translate3d(365px, 223px, 1576px);
+            transform: translate3d(365px, 223px, 1576px);
+            background: #d9d926;
+        }
+
+        .bubble:nth-child(6) {
+            height: 15px;
+            width: 15px;
+            -webkit-animation-delay: -1.2s;
+            animation-delay: -1.2s;
+            -webkit-transform: translate3d(476px, 67px, 607px);
+            transform: translate3d(476px, 67px, 607px);
+            background: #2650d9;
+        }
+
+        .bubble:nth-child(7) {
+            height: 22px;
+            width: 22px;
+            -webkit-animation-delay: -1.4s;
+            animation-delay: -1.4s;
+            -webkit-transform: translate3d(225px, 720px, 1979px);
+            transform: translate3d(225px, 720px, 1979px);
+            background: #d99426;
+        }
+
+        .bubble:nth-child(8) {
+            height: 2px;
+            width: 2px;
+            -webkit-animation-delay: -1.6s;
+            animation-delay: -1.6s;
+            -webkit-transform: translate3d(142px, 372px, 1058px);
+            transform: translate3d(142px, 372px, 1058px);
+            background: #26d9b5;
+        }
+
+        .bubble:nth-child(9) {
+            height: 11px;
+            width: 11px;
+            -webkit-animation-delay: -1.8s;
+            animation-delay: -1.8s;
+            -webkit-transform: translate3d(425px, 441px, 1206px);
+            transform: translate3d(425px, 441px, 1206px);
+            background: #d95326;
+        }
+
+        .bubble:nth-child(10) {
+            height: 12px;
+            width: 12px;
+            -webkit-animation-delay: -2s;
+            animation-delay: -2s;
+            -webkit-transform: translate3d(245px, 235px, 1574px);
+            transform: translate3d(245px, 235px, 1574px);
+            background: #2688d9;
+        }
+
+        .bubble:nth-child(11) {
+            height: 20px;
+            width: 20px;
+            -webkit-animation-delay: -2.2s;
+            animation-delay: -2.2s;
+            -webkit-transform: translate3d(480px, 696px, 1517px);
+            transform: translate3d(480px, 696px, 1517px);
+            background: #26c4d9;
+        }
+
+        .bubble:nth-child(12) {
+            height: 26px;
+            width: 26px;
+            -webkit-animation-delay: -2.4s;
+            animation-delay: -2.4s;
+            -webkit-transform: translate3d(806px, 882px, 392px);
+            transform: translate3d(806px, 882px, 392px);
+            background: #80d926;
+        }
+
+        .bubble:nth-child(13) {
+            height: 2px;
+            width: 2px;
+            -webkit-animation-delay: -2.6s;
+            animation-delay: -2.6s;
+            -webkit-transform: translate3d(500px, 962px, 797px);
+            transform: translate3d(500px, 962px, 797px);
+            background: #26d92c;
+        }
+
+        .bubble:nth-child(14) {
+            height: 18px;
+            width: 18px;
+            -webkit-animation-delay: -2.8s;
+            animation-delay: -2.8s;
+            -webkit-transform: translate3d(924px, 829px, 493px);
+            transform: translate3d(924px, 829px, 493px);
+            background: #5926d9;
+        }
+
+        .bubble:nth-child(15) {
+            height: 4px;
+            width: 4px;
+            -webkit-animation-delay: -3s;
+            animation-delay: -3s;
+            -webkit-transform: translate3d(886px, 947px, 1916px);
+            transform: translate3d(886px, 947px, 1916px);
+            background: #32d926;
+        }
+
+        .bubble:nth-child(16) {
+            height: 25px;
+            width: 25px;
+            -webkit-animation-delay: -3.2s;
+            animation-delay: -3.2s;
+            -webkit-transform: translate3d(728px, 282px, 1799px);
+            transform: translate3d(728px, 282px, 1799px);
+            background: #4726d9;
+        }
+
+        .bubble:nth-child(17) {
+            height: 29px;
+            width: 29px;
+            -webkit-animation-delay: -3.4s;
+            animation-delay: -3.4s;
+            -webkit-transform: translate3d(182px, 710px, 1141px);
+            transform: translate3d(182px, 710px, 1141px);
+            background: #d92653;
+        }
+
+        .bubble:nth-child(18) {
+            height: 20px;
+            width: 20px;
+            -webkit-animation-delay: -3.6s;
+            animation-delay: -3.6s;
+            -webkit-transform: translate3d(880px, 697px, 314px);
+            transform: translate3d(880px, 697px, 314px);
+            background: #d926c1;
+        }
+
+        .bubble:nth-child(19) {
+            height: 26px;
+            width: 26px;
+            -webkit-animation-delay: -3.8s;
+            animation-delay: -3.8s;
+            -webkit-transform: translate3d(505px, 843px, 433px);
+            transform: translate3d(505px, 843px, 433px);
+            background: #c126d9;
+        }
+
+        .bubble:nth-child(20) {
+            height: 4px;
+            width: 4px;
+            -webkit-animation-delay: -4s;
+            animation-delay: -4s;
+            -webkit-transform: translate3d(346px, 548px, 170px);
+            transform: translate3d(346px, 548px, 170px);
+            background: #26d95c;
+        }
+
+        .bubble:nth-child(21) {
+            height: 21px;
+            width: 21px;
+            -webkit-animation-delay: -4.2s;
+            animation-delay: -4.2s;
+            -webkit-transform: translate3d(594px, 124px, 1224px);
+            transform: translate3d(594px, 124px, 1224px);
+            background: #d6d926;
+        }
+
+        .bubble:nth-child(22) {
+            height: 18px;
+            width: 18px;
+            -webkit-animation-delay: -4.4s;
+            animation-delay: -4.4s;
+            -webkit-transform: translate3d(937px, 323px, 91px);
+            transform: translate3d(937px, 323px, 91px);
+            background: #d026d9;
+        }
+
+        .bubble:nth-child(23) {
+            height: 8px;
+            width: 8px;
+            -webkit-animation-delay: -4.6s;
+            animation-delay: -4.6s;
+            -webkit-transform: translate3d(711px, 775px, 1418px);
+            transform: translate3d(711px, 775px, 1418px);
+            background: #38d926;
+        }
+
+        .bubble:nth-child(24) {
+            height: 21px;
+            width: 21px;
+            -webkit-animation-delay: -4.8s;
+            animation-delay: -4.8s;
+            -webkit-transform: translate3d(528px, 753px, 1517px);
+            transform: translate3d(528px, 753px, 1517px);
+            background: #d926d0;
+        }
+
+        .bubble:nth-child(25) {
+            height: 26px;
+            width: 26px;
+            -webkit-animation-delay: -5s;
+            animation-delay: -5s;
+            -webkit-transform: translate3d(497px, 4px, 1734px);
+            transform: translate3d(497px, 4px, 1734px);
+            background: #26d988;
+        }
+
+        .bubble:nth-child(26) {
+            height: 14px;
+            width: 14px;
+            -webkit-animation-delay: -5.2s;
+            animation-delay: -5.2s;
+            -webkit-transform: translate3d(778px, 778px, 1393px);
+            transform: translate3d(778px, 778px, 1393px);
+            background: #263bd9;
+        }
+
+        .bubble:nth-child(27) {
+            height: 18px;
+            width: 18px;
+            -webkit-animation-delay: -5.4s;
+            animation-delay: -5.4s;
+            -webkit-transform: translate3d(228px, 259px, 785px);
+            transform: translate3d(228px, 259px, 785px);
+            background: #26d95c;
+        }
+
+        .bubble:nth-child(28) {
+            height: 22px;
+            width: 22px;
+            -webkit-animation-delay: -5.6s;
+            animation-delay: -5.6s;
+            -webkit-transform: translate3d(455px, 903px, 1823px);
+            transform: translate3d(455px, 903px, 1823px);
+            background: #d98826;
+        }
+
+        .bubble:nth-child(29) {
+            height: 22px;
+            width: 22px;
+            -webkit-animation-delay: -5.8s;
+            animation-delay: -5.8s;
+            -webkit-transform: translate3d(331px, 625px, 284px);
+            transform: translate3d(331px, 625px, 284px);
+            background: #26d959;
+        }
+
+        .bubble:nth-child(30) {
+            height: 25px;
+            width: 25px;
+            -webkit-animation-delay: -6s;
+            animation-delay: -6s;
+            -webkit-transform: translate3d(611px, 822px, 311px);
+            transform: translate3d(611px, 822px, 311px);
+            background: #d92641;
+        }
+
+        .bubble:nth-child(31) {
+            height: 15px;
+            width: 15px;
+            -webkit-animation-delay: -6.2s;
+            animation-delay: -6.2s;
+            -webkit-transform: translate3d(123px, 505px, 1070px);
+            transform: translate3d(123px, 505px, 1070px);
+            background: #d3d926;
+        }
+
+        .bubble:nth-child(32) {
+            height: 26px;
+            width: 26px;
+            -webkit-animation-delay: -6.4s;
+            animation-delay: -6.4s;
+            -webkit-transform: translate3d(900px, 770px, 313px);
+            transform: translate3d(900px, 770px, 313px);
+            background: #d9a026;
+        }
+
+        .bubble:nth-child(33) {
+            height: 14px;
+            width: 14px;
+            -webkit-animation-delay: -6.6s;
+            animation-delay: -6.6s;
+            -webkit-transform: translate3d(84px, 766px, 1919px);
+            transform: translate3d(84px, 766px, 1919px);
+            background: #d92694;
+        }
+
+        .bubble:nth-child(34) {
+            height: 4px;
+            width: 4px;
+            -webkit-animation-delay: -6.8s;
+            animation-delay: -6.8s;
+            -webkit-transform: translate3d(977px, 49px, 18px);
+            transform: translate3d(977px, 49px, 18px);
+            background: #263ed9;
+        }
+
+        .bubble:nth-child(35) {
+            height: 28px;
+            width: 28px;
+            -webkit-animation-delay: -7s;
+            animation-delay: -7s;
+            -webkit-transform: translate3d(474px, 674px, 1760px);
+            transform: translate3d(474px, 674px, 1760px);
+            background: #26d9a9;
+        }
+
+        .bubble:nth-child(36) {
+            height: 28px;
+            width: 28px;
+            -webkit-animation-delay: -7.2s;
+            animation-delay: -7.2s;
+            -webkit-transform: translate3d(180px, 247px, 217px);
+            transform: translate3d(180px, 247px, 217px);
+            background: #5cd926;
+        }
+
+        .bubble:nth-child(37) {
+            height: 21px;
+            width: 21px;
+            -webkit-animation-delay: -7.4s;
+            animation-delay: -7.4s;
+            -webkit-transform: translate3d(734px, 716px, 1034px);
+            transform: translate3d(734px, 716px, 1034px);
+            background: #d9cd26;
+        }
+
+        .bubble:nth-child(38) {
+            height: 3px;
+            width: 3px;
+            -webkit-animation-delay: -7.6s;
+            animation-delay: -7.6s;
+            -webkit-transform: translate3d(54px, 531px, 1176px);
+            transform: translate3d(54px, 531px, 1176px);
+            background: #c7d926;
+        }
+
+        .bubble:nth-child(39) {
+            height: 11px;
+            width: 11px;
+            -webkit-animation-delay: -7.8s;
+            animation-delay: -7.8s;
+            -webkit-transform: translate3d(741px, 849px, 1771px);
+            transform: translate3d(741px, 849px, 1771px);
+            background: #d94126;
+        }
+
+        .bubble:nth-child(40) {
+            height: 14px;
+            width: 14px;
+            -webkit-animation-delay: -8s;
+            animation-delay: -8s;
+            -webkit-transform: translate3d(853px, 712px, 109px);
+            transform: translate3d(853px, 712px, 109px);
+            background: #2644d9;
+        }
+
+        .bubble:nth-child(41) {
+            height: 10px;
+            width: 10px;
+            -webkit-animation-delay: -8.2s;
+            animation-delay: -8.2s;
+            -webkit-transform: translate3d(813px, 936px, 396px);
+            transform: translate3d(813px, 936px, 396px);
+            background: #3826d9;
+        }
+
+        .bubble:nth-child(42) {
+            height: 19px;
+            width: 19px;
+            -webkit-animation-delay: -8.4s;
+            animation-delay: -8.4s;
+            -webkit-transform: translate3d(592px, 252px, 223px);
+            transform: translate3d(592px, 252px, 223px);
+            background: #2659d9;
+        }
+
+        .bubble:nth-child(43) {
+            height: 8px;
+            width: 8px;
+            -webkit-animation-delay: -8.6s;
+            animation-delay: -8.6s;
+            -webkit-transform: translate3d(845px, 949px, 179px);
+            transform: translate3d(845px, 949px, 179px);
+            background: #d98e26;
+        }
+
+        .bubble:nth-child(44) {
+            height: 29px;
+            width: 29px;
+            -webkit-animation-delay: -8.8s;
+            animation-delay: -8.8s;
+            -webkit-transform: translate3d(674px, 10px, 741px);
+            transform: translate3d(674px, 10px, 741px);
+            background: #268ed9;
+        }
+
+        .bubble:nth-child(45) {
+            height: 19px;
+            width: 19px;
+            -webkit-animation-delay: -9s;
+            animation-delay: -9s;
+            -webkit-transform: translate3d(398px, 168px, 724px);
+            transform: translate3d(398px, 168px, 724px);
+            background: #d99126;
+        }
+
+        .bubble:nth-child(46) {
+            height: 27px;
+            width: 27px;
+            -webkit-animation-delay: -9.2s;
+            animation-delay: -9.2s;
+            -webkit-transform: translate3d(559px, 851px, 534px);
+            transform: translate3d(559px, 851px, 534px);
+            background: #26d9c4;
+        }
+
+        .bubble:nth-child(47) {
+            height: 5px;
+            width: 5px;
+            -webkit-animation-delay: -9.4s;
+            animation-delay: -9.4s;
+            -webkit-transform: translate3d(137px, 81px, 98px);
+            transform: translate3d(137px, 81px, 98px);
+            background: #62d926;
+        }
+
+        .bubble:nth-child(48) {
+            height: 2px;
+            width: 2px;
+            -webkit-animation-delay: -9.6s;
+            animation-delay: -9.6s;
+            -webkit-transform: translate3d(986px, 754px, 1251px);
+            transform: translate3d(986px, 754px, 1251px);
+            background: #9426d9;
+        }
+
+        .bubble:nth-child(49) {
+            height: 5px;
+            width: 5px;
+            -webkit-animation-delay: -9.8s;
+            animation-delay: -9.8s;
+            -webkit-transform: translate3d(566px, 69px, 1555px);
+            transform: translate3d(566px, 69px, 1555px);
+            background: #5326d9;
+        }
+
+        .bubble:nth-child(50) {
+            height: 4px;
+            width: 4px;
+            -webkit-animation-delay: -10s;
+            animation-delay: -10s;
+            -webkit-transform: translate3d(723px, 906px, 103px);
+            transform: translate3d(723px, 906px, 103px);
+            background: #5f26d9;
+        }
+
+        .bubble:nth-child(51) {
+            height: 10px;
+            width: 10px;
+            -webkit-animation-delay: -10.2s;
+            animation-delay: -10.2s;
+            -webkit-transform: translate3d(577px, 381px, 986px);
+            transform: translate3d(577px, 381px, 986px);
+            background: #26d9a9;
+        }
+
+        .bubble:nth-child(52) {
+            height: 21px;
+            width: 21px;
+            -webkit-animation-delay: -10.4s;
+            animation-delay: -10.4s;
+            -webkit-transform: translate3d(761px, 260px, 556px);
+            transform: translate3d(761px, 260px, 556px);
+            background: #2674d9;
+        }
+
+        .bubble:nth-child(53) {
+            height: 24px;
+            width: 24px;
+            -webkit-animation-delay: -10.6s;
+            animation-delay: -10.6s;
+            -webkit-transform: translate3d(213px, 871px, 1161px);
+            transform: translate3d(213px, 871px, 1161px);
+            background: #d926cd;
+        }
+
+        .bubble:nth-child(54) {
+            height: 25px;
+            width: 25px;
+            -webkit-animation-delay: -10.8s;
+            animation-delay: -10.8s;
+            -webkit-transform: translate3d(260px, 938px, 1194px);
+            transform: translate3d(260px, 938px, 1194px);
+            background: #8e26d9;
+        }
+
+        .bubble:nth-child(55) {
+            height: 19px;
+            width: 19px;
+            -webkit-animation-delay: -11s;
+            animation-delay: -11s;
+            -webkit-transform: translate3d(737px, 799px, 86px);
+            transform: translate3d(737px, 799px, 86px);
+            background: #2680d9;
+        }
+
+        .bubble:nth-child(56) {
+            height: 25px;
+            width: 25px;
+            -webkit-animation-delay: -11.2s;
+            animation-delay: -11.2s;
+            -webkit-transform: translate3d(658px, 967px, 1465px);
+            transform: translate3d(658px, 967px, 1465px);
+            background: #d93826;
+        }
+
+        .bubble:nth-child(57) {
+            height: 5px;
+            width: 5px;
+            -webkit-animation-delay: -11.4s;
+            animation-delay: -11.4s;
+            -webkit-transform: translate3d(804px, 480px, 194px);
+            transform: translate3d(804px, 480px, 194px);
+            background: #26d92f;
+        }
+
+        .bubble:nth-child(58) {
+            height: 10px;
+            width: 10px;
+            -webkit-animation-delay: -11.6s;
+            animation-delay: -11.6s;
+            -webkit-transform: translate3d(695px, 420px, 1080px);
+            transform: translate3d(695px, 420px, 1080px);
+            background: #d926d3;
+        }
+
+        .bubble:nth-child(59) {
+            height: 16px;
+            width: 16px;
+            -webkit-animation-delay: -11.8s;
+            animation-delay: -11.8s;
+            -webkit-transform: translate3d(728px, 763px, 1229px);
+            transform: translate3d(728px, 763px, 1229px);
+            background: #26b8d9;
+        }
+
+        .bubble:nth-child(60) {
+            height: 6px;
+            width: 6px;
+            -webkit-animation-delay: -12s;
+            animation-delay: -12s;
+            -webkit-transform: translate3d(878px, 105px, 540px);
+            transform: translate3d(878px, 105px, 540px);
+            background: #7426d9;
+        }
+
+        .bubble:nth-child(61) {
+            height: 13px;
+            width: 13px;
+            -webkit-animation-delay: -12.2s;
+            animation-delay: -12.2s;
+            -webkit-transform: translate3d(687px, 336px, 434px);
+            transform: translate3d(687px, 336px, 434px);
+            background: #26d99a;
+        }
+
+        .bubble:nth-child(62) {
+            height: 29px;
+            width: 29px;
+            -webkit-animation-delay: -12.4s;
+            animation-delay: -12.4s;
+            -webkit-transform: translate3d(509px, 542px, 1708px);
+            transform: translate3d(509px, 542px, 1708px);
+            background: #3826d9;
+        }
+
+        .bubble:nth-child(63) {
+            height: 8px;
+            width: 8px;
+            -webkit-animation-delay: -12.6s;
+            animation-delay: -12.6s;
+            -webkit-transform: translate3d(893px, 308px, 549px);
+            transform: translate3d(893px, 308px, 549px);
+            background: #7426d9;
+        }
+
+        .bubble:nth-child(64) {
+            height: 14px;
+            width: 14px;
+            -webkit-animation-delay: -12.8s;
+            animation-delay: -12.8s;
+            -webkit-transform: translate3d(609px, 879px, 1658px);
+            transform: translate3d(609px, 879px, 1658px);
+            background: #d99426;
+        }
+
+        .bubble:nth-child(65) {
+            height: 28px;
+            width: 28px;
+            -webkit-animation-delay: -13s;
+            animation-delay: -13s;
+            -webkit-transform: translate3d(863px, 709px, 204px);
+            transform: translate3d(863px, 709px, 204px);
+            background: #c726d9;
+        }
+
+        .bubble:nth-child(66) {
+            height: 17px;
+            width: 17px;
+            -webkit-animation-delay: -13.2s;
+            animation-delay: -13.2s;
+            -webkit-transform: translate3d(600px, 241px, 254px);
+            transform: translate3d(600px, 241px, 254px);
+            background: #b826d9;
+        }
+
+        .bubble:nth-child(67) {
+            height: 29px;
+            width: 29px;
+            -webkit-animation-delay: -13.4s;
+            animation-delay: -13.4s;
+            -webkit-transform: translate3d(129px, 559px, 766px);
+            transform: translate3d(129px, 559px, 766px);
+            background: #d9d026;
+        }
+
+        .bubble:nth-child(68) {
+            height: 10px;
+            width: 10px;
+            -webkit-animation-delay: -13.6s;
+            animation-delay: -13.6s;
+            -webkit-transform: translate3d(272px, 908px, 983px);
+            transform: translate3d(272px, 908px, 983px);
+            background: #d92682;
+        }
+
+        .bubble:nth-child(69) {
+            height: 12px;
+            width: 12px;
+            -webkit-animation-delay: -13.8s;
+            animation-delay: -13.8s;
+            -webkit-transform: translate3d(165px, 683px, 1734px);
+            transform: translate3d(165px, 683px, 1734px);
+            background: #d96526;
+        }
+
+        .bubble:nth-child(70) {
+            height: 17px;
+            width: 17px;
+            -webkit-animation-delay: -14s;
+            animation-delay: -14s;
+            -webkit-transform: translate3d(712px, 513px, 285px);
+            transform: translate3d(712px, 513px, 285px);
+            background: #9d26d9;
+        }
+
+        .bubble:nth-child(71) {
+            height: 22px;
+            width: 22px;
+            -webkit-animation-delay: -14.2s;
+            animation-delay: -14.2s;
+            -webkit-transform: translate3d(343px, 905px, 1751px);
+            transform: translate3d(343px, 905px, 1751px);
+            background: #26d968;
+        }
+
+        .bubble:nth-child(72) {
+            height: 26px;
+            width: 26px;
+            -webkit-animation-delay: -14.4s;
+            animation-delay: -14.4s;
+            -webkit-transform: translate3d(836px, 115px, 936px);
+            transform: translate3d(836px, 115px, 936px);
+            background: #62d926;
+        }
+
+        .bubble:nth-child(73) {
+            height: 21px;
+            width: 21px;
+            -webkit-animation-delay: -14.6s;
+            animation-delay: -14.6s;
+            -webkit-transform: translate3d(667px, 151px, 536px);
+            transform: translate3d(667px, 151px, 536px);
+            background: #26acd9;
+        }
+
+        .bubble:nth-child(74) {
+            height: 23px;
+            width: 23px;
+            -webkit-animation-delay: -14.8s;
+            animation-delay: -14.8s;
+            -webkit-transform: translate3d(223px, 990px, 1545px);
+            transform: translate3d(223px, 990px, 1545px);
+            background: #d92647;
+        }
+
+        .bubble:nth-child(75) {
+            height: 23px;
+            width: 23px;
+            -webkit-animation-delay: -15s;
+            animation-delay: -15s;
+            -webkit-transform: translate3d(566px, 83px, 714px);
+            transform: translate3d(566px, 83px, 714px);
+            background: #d92641;
+        }
+
+        .bubble:nth-child(76) {
+            height: 5px;
+            width: 5px;
+            -webkit-animation-delay: -15.2s;
+            animation-delay: -15.2s;
+            -webkit-transform: translate3d(68px, 854px, 667px);
+            transform: translate3d(68px, 854px, 667px);
+            background: #8b26d9;
+        }
+
+        .bubble:nth-child(77) {
+            height: 13px;
+            width: 13px;
+            -webkit-animation-delay: -15.4s;
+            animation-delay: -15.4s;
+            -webkit-transform: translate3d(199px, 992px, 390px);
+            transform: translate3d(199px, 992px, 390px);
+            background: #cad926;
+        }
+
+        .bubble:nth-child(78) {
+            height: 8px;
+            width: 8px;
+            -webkit-animation-delay: -15.6s;
+            animation-delay: -15.6s;
+            -webkit-transform: translate3d(938px, 128px, 583px);
+            transform: translate3d(938px, 128px, 583px);
+            background: #74d926;
+        }
+
+        .bubble:nth-child(79) {
+            height: 1px;
+            width: 1px;
+            -webkit-animation-delay: -15.8s;
+            animation-delay: -15.8s;
+            -webkit-transform: translate3d(844px, 781px, 123px);
+            transform: translate3d(844px, 781px, 123px);
+            background: #8e26d9;
+        }
+
+        .bubble:nth-child(80) {
+            height: 25px;
+            width: 25px;
+            -webkit-animation-delay: -16s;
+            animation-delay: -16s;
+            -webkit-transform: translate3d(22px, 490px, 1847px);
+            transform: translate3d(22px, 490px, 1847px);
+            background: #50d926;
+        }
+
+        .bubble:nth-child(81) {
+            height: 24px;
+            width: 24px;
+            -webkit-animation-delay: -16.2s;
+            animation-delay: -16.2s;
+            -webkit-transform: translate3d(896px, 658px, 1096px);
+            transform: translate3d(896px, 658px, 1096px);
+            background: #2682d9;
+        }
+
+        .bubble:nth-child(82) {
+            height: 7px;
+            width: 7px;
+            -webkit-animation-delay: -16.4s;
+            animation-delay: -16.4s;
+            -webkit-transform: translate3d(789px, 547px, 1774px);
+            transform: translate3d(789px, 547px, 1774px);
+            background: #d626d9;
+        }
+
+        .bubble:nth-child(83) {
+            height: 14px;
+            width: 14px;
+            -webkit-animation-delay: -16.6s;
+            animation-delay: -16.6s;
+            -webkit-transform: translate3d(698px, 162px, 373px);
+            transform: translate3d(698px, 162px, 373px);
+            background: #ac26d9;
+        }
+
+        .bubble:nth-child(84) {
+            height: 13px;
+            width: 13px;
+            -webkit-animation-delay: -16.8s;
+            animation-delay: -16.8s;
+            -webkit-transform: translate3d(598px, 440px, 49px);
+            transform: translate3d(598px, 440px, 49px);
+            background: #263ed9;
+        }
+
+        .bubble:nth-child(85) {
+            height: 6px;
+            width: 6px;
+            -webkit-animation-delay: -17s;
+            animation-delay: -17s;
+            -webkit-transform: translate3d(386px, 344px, 1777px);
+            transform: translate3d(386px, 344px, 1777px);
+            background: #2665d9;
+        }
+
+        .bubble:nth-child(86) {
+            height: 3px;
+            width: 3px;
+            -webkit-animation-delay: -17.2s;
+            animation-delay: -17.2s;
+            -webkit-transform: translate3d(365px, 456px, 1873px);
+            transform: translate3d(365px, 456px, 1873px);
+            background: #d926cd;
+        }
+
+        .bubble:nth-child(87) {
+            height: 5px;
+            width: 5px;
+            -webkit-animation-delay: -17.4s;
+            animation-delay: -17.4s;
+            -webkit-transform: translate3d(869px, 866px, 20px);
+            transform: translate3d(869px, 866px, 20px);
+            background: #d98026;
+        }
+
+        .bubble:nth-child(88) {
+            height: 2px;
+            width: 2px;
+            -webkit-animation-delay: -17.6s;
+            animation-delay: -17.6s;
+            -webkit-transform: translate3d(835px, 39px, 1660px);
+            transform: translate3d(835px, 39px, 1660px);
+            background: #2650d9;
+        }
+
+        .bubble:nth-child(89) {
+            height: 21px;
+            width: 21px;
+            -webkit-animation-delay: -17.8s;
+            animation-delay: -17.8s;
+            -webkit-transform: translate3d(908px, 558px, 1903px);
+            transform: translate3d(908px, 558px, 1903px);
+            background: #d95c26;
+        }
+
+        .bubble:nth-child(90) {
+            height: 12px;
+            width: 12px;
+            -webkit-animation-delay: -18s;
+            animation-delay: -18s;
+            -webkit-transform: translate3d(379px, 627px, 210px);
+            transform: translate3d(379px, 627px, 210px);
+            background: #82d926;
+        }
+
+        .bubble:nth-child(91) {
+            height: 13px;
+            width: 13px;
+            -webkit-animation-delay: -18.2s;
+            animation-delay: -18.2s;
+            -webkit-transform: translate3d(485px, 348px, 971px);
+            transform: translate3d(485px, 348px, 971px);
+            background: #d9b526;
+        }
+
+        .bubble:nth-child(92) {
+            height: 5px;
+            width: 5px;
+            -webkit-animation-delay: -18.4s;
+            animation-delay: -18.4s;
+            -webkit-transform: translate3d(857px, 542px, 355px);
+            transform: translate3d(857px, 542px, 355px);
+            background: #d93226;
+        }
+
+        .bubble:nth-child(93) {
+            height: 17px;
+            width: 17px;
+            -webkit-animation-delay: -18.6s;
+            animation-delay: -18.6s;
+            -webkit-transform: translate3d(424px, 231px, 259px);
+            transform: translate3d(424px, 231px, 259px);
+            background: #d9a326;
+        }
+
+        .bubble:nth-child(94) {
+            height: 2px;
+            width: 2px;
+            -webkit-animation-delay: -18.8s;
+            animation-delay: -18.8s;
+            -webkit-transform: translate3d(676px, 303px, 1660px);
+            transform: translate3d(676px, 303px, 1660px);
+            background: #2629d9;
+        }
+
+        .bubble:nth-child(95) {
+            height: 22px;
+            width: 22px;
+            -webkit-animation-delay: -19s;
+            animation-delay: -19s;
+            -webkit-transform: translate3d(841px, 654px, 1026px);
+            transform: translate3d(841px, 654px, 1026px);
+            background: #d9d926;
+        }
+
+        .bubble:nth-child(96) {
+            height: 29px;
+            width: 29px;
+            -webkit-animation-delay: -19.2s;
+            animation-delay: -19.2s;
+            -webkit-transform: translate3d(212px, 863px, 1964px);
+            transform: translate3d(212px, 863px, 1964px);
+            background: #d92668;
+        }
+
+        .bubble:nth-child(97) {
+            height: 9px;
+            width: 9px;
+            -webkit-animation-delay: -19.4s;
+            animation-delay: -19.4s;
+            -webkit-transform: translate3d(650px, 123px, 354px);
+            transform: translate3d(650px, 123px, 354px);
+            background: #d93e26;
+        }
+
+        .bubble:nth-child(98) {
+            height: 29px;
+            width: 29px;
+            -webkit-animation-delay: -19.6s;
+            animation-delay: -19.6s;
+            -webkit-transform: translate3d(424px, 255px, 1474px);
+            transform: translate3d(424px, 255px, 1474px);
+            background: #2662d9;
+        }
+
+        .bubble:nth-child(99) {
+            height: 7px;
+            width: 7px;
+            -webkit-animation-delay: -19.8s;
+            animation-delay: -19.8s;
+            -webkit-transform: translate3d(624px, 869px, 1045px);
+            transform: translate3d(624px, 869px, 1045px);
+            background: #26d9ca;
+        }
+
+        .bubble:nth-child(100) {
+            height: 1px;
+            width: 1px;
+            -webkit-animation-delay: -20s;
+            animation-delay: -20s;
+            -webkit-transform: translate3d(58px, 872px, 1092px);
+            transform: translate3d(58px, 872px, 1092px);
+            background: #2626d9;
+        }
+    </style>
+</head>
+<body translate="no">
+    <div class="container">
+        <div class="bubble-wrap">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
+    </div>
+    <svg class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5850 964">
+        <polygon class="fill" points="364,822 307,822 307,961 268,961 268,822 211,822 211,792 364,792" />
+        <polygon class="fill" points="807,961 699,961 699,792 805,792 805,822 738,822 738,859 802,859 802,889 738,889 738,932 807,932" />
+        <path class="fill" d="M1292 949c-16,10 -35,15 -57,15 -27,0 -50,-8 -68,-24 -18,-17 -27,-37 -27,-62 0,-25 10,-46 28,-63 18,-17 40,-25 68,-25 18,0 35,4 49,12l0 33c-16,-8 -31,-13 -46,-13 -17,0 -31,6 -42,16 -10,10 -16,24 -16,40 0,15 6,28 16,38 11,10 25,15 42,15 18,0 36,-6 53,-19l0 37z" />
+        <polygon class="fill" points="1794,961 1755,961 1755,889 1675,889 1675,961 1636,961 1636,792 1675,792 1675,861 1755,861 1755,792 1794,792" />
+        <polygon class="fill" points="2307,961 2273,961 2184,855 2184,961 2145,961 2145,792 2181,792 2269,898 2269,792 2307,792" />
+        <path class="fill" d="M2830 877c0,25 -9,46 -25,62 -17,17 -39,25 -65,25 -25,0 -46,-8 -63,-25 -17,-17 -25,-37 -25,-62 0,-25 8,-46 25,-62 17,-17 38,-25 63,-25 26,0 48,8 65,24 16,17 25,37 25,63zm-41 0l0 0c0,-15 -4,-29 -13,-39 -10,-10 -21,-16 -35,-16 -14,0 -26,6 -35,16 -9,10 -14,23 -14,39 0,16 5,29 14,39 9,10 20,15 35,15 14,0 25,-5 34,-15 10,-10 14,-23 14,-39z" />
+        <polygon class="fill" points="3290,961 3173,961 3173,792 3211,792 3211,932 3290,932" />
+        <path class="fill" d="M3791 877c0,25 -8,46 -25,62 -17,17 -38,25 -64,25 -25,0 -46,-8 -63,-25 -17,-17 -26,-37 -26,-62 0,-25 9,-46 26,-62 17,-17 38,-25 63,-25 26,0 47,8 64,24 17,17 25,37 25,63zm-40 0l0 0c0,-15 -5,-29 -14,-39 -9,-10 -21,-16 -35,-16 -14,0 -25,6 -35,16 -9,10 -13,23 -13,39 0,16 4,29 13,39 10,10 21,15 35,15 14,0 26,-5 35,-15 9,-10 14,-23 14,-39z" />
+        <path class="fill" d="M4280 958c-13,4 -30,6 -52,6 -31,0 -56,-8 -74,-23 -18,-15 -27,-37 -27,-64 0,-26 9,-47 27,-63 18,-16 41,-24 69,-24 19,0 37,3 53,11l0 34c-19,-8 -35,-12 -50,-12 -17,0 -31,5 -42,15 -11,9 -17,22 -17,38 0,17 6,31 17,40 11,10 26,15 45,15 4,0 8,0 13,0l0 -27 -18 0 0 -29 56 0 0 83z" />
+        <polygon class="fill" points="4667,961 4629,961 4629,792 4667,792" />
+        <polygon class="fill" points="5126,961 5018,961 5018,792 5124,792 5124,822 5057,822 5057,859 5121,859 5121,889 5057,889 5057,932 5126,932" />
+        <path class="fill" d="M5564 914c0,15 -6,27 -17,36 -11,9 -26,14 -44,14 -13,0 -27,-3 -42,-9l0 -38c15,10 28,15 39,15 8,0 13,-1 18,-5 4,-4 7,-8 7,-13 0,-5 -2,-9 -5,-12 -4,-3 -11,-7 -21,-13 -14,-7 -24,-15 -30,-22 -5,-7 -8,-16 -8,-26 0,-15 5,-28 16,-37 11,-10 25,-14 42,-14 12,0 25,3 40,9l0 35c-12,-8 -23,-12 -35,-12 -7,0 -13,1 -17,4 -4,4 -6,8 -6,13 0,5 1,10 5,13 3,3 9,7 20,13 14,7 23,14 29,22 6,8 9,17 9,27z" />
+        <path class="fill" d="M2360 355c3,-16 1,-30 -8,-42 -9,-12 -21,-18 -37,-18l-61 0c-8,0 -16,1 -25,4 -8,4 -16,8 -23,14 -7,5 -14,11 -19,19 -5,7 -9,15 -10,23l-33 122c-2,8 -2,16 -1,23 2,8 4,14 8,20 4,6 9,10 16,14 6,3 13,5 21,5l61 0c16,0 32,-6 48,-19 15,-13 25,-27 29,-43l34 -122zm-1494 260l0 0 66 -244c4,-16 2,-31 -7,-43 -9,-12 -22,-18 -38,-18l-122 0 -82 305 -182 0 98 -366 427 0c7,0 15,0 21,2 83,-148 268,-251 482,-251 72,0 141,12 204,33 -49,-13 -102,-20 -157,-20 -260,0 -471,161 -471,360 0,199 211,360 471,360 261,0 472,-161 472,-360 0,-30 -5,-58 -14,-85 6,-6 12,-12 19,-17 32,-25 64,-38 96,-38l305 0c31,0 56,13 74,38 18,25 23,53 15,85l-33 121c-9,32 -28,61 -60,86 -31,24 -63,37 -94,37l-306 0c-13,0 -24,-2 -35,-6 -80,153 -268,260 -486,260 -211,0 -393,-100 -478,-245l-1 6 -184 0z" />
+        <path class="fill" d="M94 615c-33,0 -58,-12 -76,-37 -18,-24 -22,-53 -14,-85l66 -245c8,-31 28,-59 59,-84 31,-24 63,-37 95,-37l366 0 -16 61 -244 0c-8,0 -16,2 -24,5 -8,4 -16,8 -24,14 -7,5 -13,12 -19,19 -5,8 -9,15 -11,22l-24 93 244 0 -16 60 -245 0 -24 92c-2,8 -2,15 0,23 1,7 4,14 8,19 4,6 9,11 15,14 6,4 13,5 21,5l244 0 -16 61 -365 0z" />
+        <path class="fill" d="M3198 600l66 -245c3,-16 1,-30 -8,-42 -9,-12 -21,-18 -37,-18l-31 0c-15,0 -31,6 -47,18 -16,12 -26,26 -29,42l-66 245 -183 0 66 -245c4,-16 1,-30 -8,-42 -9,-12 -22,-18 -38,-18l-30 0c-8,0 -16,1 -24,4 -9,4 -17,8 -24,14 -7,5 -13,11 -19,19 -5,7 -9,15 -10,23l-66 245 -183 0 66 -244c9,-33 29,-61 59,-85 32,-25 64,-38 96,-38l609 0c31,0 56,13 75,38 18,25 23,53 15,85l-66 244 -183 0z" />
+        <path class="fill" d="M3866 355c4,-16 2,-30 -7,-42 -9,-12 -21,-18 -37,-18l-123 0 -65 244 122 0c16,0 32,-6 47,-19 16,-13 26,-27 30,-43l33 -122zm151 122l0 0c-9,32 -29,61 -60,86 -32,24 -64,37 -95,37l-244 0 -33 121 -182 0 130 -488 427 0c31,0 56,13 74,38 19,25 24,53 16,85l-33 121z" />
+        <path class="fill" d="M4422 417l-122 0c-8,0 -16,1 -24,5 -8,3 -15,8 -22,13 -7,6 -14,12 -19,20 -5,7 -9,15 -12,22 -1,8 -2,16 0,23 1,8 4,14 8,20 4,6 9,10 15,14 7,3 14,5 22,5l61 0c16,0 32,-6 48,-19 16,-13 25,-27 29,-43l16 -60zm168 60l0 0c-9,32 -29,61 -60,86 -31,24 -63,37 -95,37l-305 0c-33,0 -58,-13 -75,-37 -19,-24 -23,-53 -14,-86 8,-31 28,-60 59,-84 32,-25 64,-38 96,-38l244 0c1,-8 0,-16 -1,-23 -2,-7 -4,-14 -8,-19 -4,-6 -9,-10 -15,-14 -6,-3 -13,-4 -21,-4l-244 0 16 -62 366 0c32,0 56,13 74,38 19,25 24,53 16,84l-33 122z" />
+        <path class="fill" d="M5178 508c-9,31 -29,54 -60,71 -25,14 -54,21 -87,21l-427 0 17 -61 335 0c8,0 16,-3 24,-10 7,-6 12,-13 14,-21 5,-15 -23,-29 -83,-41 -86,-16 -142,-29 -166,-40 -57,-24 -79,-58 -67,-101 9,-32 28,-56 58,-71 25,-15 55,-22 89,-22l426 0 -16 62 -335 0c-9,0 -17,3 -24,9 -8,6 -13,13 -15,21 -5,15 23,29 83,41 43,8 79,16 106,22 27,7 47,13 60,18 56,24 79,58 68,102z" />
+        <path class="fill" d="M5777 508c-9,31 -29,54 -60,71 -25,14 -55,21 -87,21l-427 0 16 -61 335 0c8,0 16,-3 24,-10 8,-6 13,-13 15,-21 4,-15 -24,-29 -84,-41 -86,-16 -141,-29 -165,-40 -57,-24 -80,-58 -68,-101 9,-32 28,-56 58,-71 26,-15 55,-22 89,-22l427 0 -16 62 -336 0c-8,0 -16,3 -24,9 -8,6 -13,13 -15,21 -4,15 24,29 84,41 43,8 78,16 106,22 27,7 47,13 59,18 57,24 80,58 69,102z" />
+        <polygon class="fill" points="1752,110 1530,314 1402,589 1629,378" />
+        <path class="fill" d="M5826 554c4,0 8,1 11,3 4,2 7,5 9,8 2,4 3,8 3,12 0,4 -1,7 -3,11 -2,4 -5,7 -8,9 -4,2 -8,3 -12,3 -4,0 -7,-1 -11,-3 -4,-2 -7,-5 -9,-9 -2,-4 -3,-7 -3,-11 0,-4 1,-8 3,-12 3,-3 5,-6 9,-8 4,-2 7,-3 11,-3zm0 4c-3,0 -6,0 -9,2 -3,2 -6,4 -7,7 -2,3 -3,6 -3,10 0,3 1,6 3,9 1,3 4,6 7,7 3,2 6,3 9,3 4,0 7,-1 10,-3 3,-1 5,-4 7,-7 1,-3 2,-6 2,-9 0,-4 -1,-7 -2,-10 -2,-3 -4,-5 -7,-7 -3,-2 -7,-2 -10,-2zm-10 31l0 -24 9 0c3,0 5,0 6,0 1,1 2,2 3,3 1,1 1,2 1,3 0,2 0,4 -2,5 -1,1 -3,2 -5,2 1,1 2,1 2,2 1,1 2,2 4,5l3 4 -5 0 -2 -4c-2,-3 -3,-4 -4,-5 -1,-1 -2,-1 -3,-1l-3 0 0 10 -4 0zm4 -13l5 0c2,0 4,-1 5,-2 1,0 1,-1 1,-2 0,-1 0,-2 -1,-2 0,-1 -1,-1 -1,-1 -1,-1 -2,-1 -4,-1l-5 0 0 8z" />
+    </svg>
+    <div class="display">
+        <div class="inner">
+            <div class="bordered">
+                <span id="date"></span>
+                <span id="time"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function setTime() {
+            const now = new Date();
+
+            document.getElementById("date").innerHTML = now.toLocaleDateString("en-US", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+            });
+
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+
+            if (minutes < 10) {
+                minutes = `0${minutes}`;
+            }
+
+            let ampm = "AM";
+
+            if (hours > 12 ) {
+                hours -= 12;
+                ampm = "PM";
+            }
+
+            document.getElementById("time").innerHTML = `${hours}:${minutes} ${ampm}`;
+        }
+
+        setTime();
+
+        setInterval(() => {
+            setTime();
+        }, 1000);
+    </script>
+</body>
+</html>
