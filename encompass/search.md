@@ -199,7 +199,7 @@ it("Navigate", async function () {
 ```
 
 > Note. We just coppied the `View` object in the `actions` variable and changed the `Action` to **Search**.
-> 
+
 ## Save
 Now let's save. Remember to test, make sure the coverage is at 100%.
 
