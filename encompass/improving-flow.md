@@ -228,11 +228,11 @@ function DisplayItem(ItemID) {
     if (ItemID && !Number.isNaN(parseInt(ItemID, 10))) {
         app.menu.className = "menu selected";
         app.content.className = "content selected";
-        app.content.items.innerHTML = `Item: ${ItemID}`;
+        app.content.item.innerHTML = `Item: ${ItemID}`;
     } else {
         app.menu.className = "menu";
         app.content.className = "content";
-        app.content.items.innerHTML = "";
+        app.content.item.innerHTML = "";
     }
 }
 
@@ -243,7 +243,7 @@ function Main() {
 
     app.testing = app.getAttribute("test") === "true";
     app.content = app.querySelector(".content");
-    app.content.items = app.content.querySelector(".item-display");
+    app.content.item = app.content.querySelector(".item-display");
     app.menu = app.querySelector(".menu");
     app.state = GetState();
 
