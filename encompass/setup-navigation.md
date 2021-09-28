@@ -287,3 +287,6 @@ describe("State Functions", function () {
     }).timeout(80000);
 });
 ```
+
+## Next
+[Interactive Elements](/encompass/interactive-elements)
