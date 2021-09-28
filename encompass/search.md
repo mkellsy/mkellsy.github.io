@@ -118,6 +118,30 @@ function Action(action, state) {
 }
 ```
 
+Finally, add the **app.search** and **app.search.input** elements to the **Main** function.
+
+```js
+function Main() {
+    app = dashboardItem.querySelector("#app");
+
+    if (!app) return false;
+
+    app.testing = app.getAttribute("test") === "true";
+    app.search = app.querySelector(".search");
+    app.search.input = app.search.querySelector("input");
+    app.content = app.querySelector(".content");
+    app.menu = app.querySelector(".menu");
+    app.state = GetState();
+
+    window.addEventListener("popstate", RestoreState);
+    app.addEventListener("click", Navigate);
+
+    Navigate(app.state);
+
+    return true;
+}
+```
+
 ### Testing
 First, we added a new function. So now we need to add the **Process Search** test case.
 
