@@ -3,11 +3,9 @@
 Now we have a layout, lets give the layout something to do. Let's make some actionalble items.
 
 ## Code
-Here we are going to modify the HTML and add some action items.
-
-Then we are going to add an `ItemID` parameter, and a `View` action.
-
-Also we are going to hide the right panel if nothing is selected. To do this we will need to map the content and menu boxes.
+* Here we are going to modify the HTML and add some action items.
+* Then we are going to add an `ItemID` parameter, and a `View` action.
+* Also we are going to hide the right panel if nothing is selected. To do this we will need to map the content and menu boxes.
 
 > Note. I am creating these code snippits to make coding in the class easier. Please understand what this code does.
 
