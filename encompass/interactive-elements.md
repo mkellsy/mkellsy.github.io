@@ -87,7 +87,8 @@ Making actionalble items.
 let app = null;
 
 const StateFields = {
-    Action: "String"
+    Action: "String",
+    ItemID: "Integer"
 };
 
 function KeyValue(parameter) {
