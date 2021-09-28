@@ -62,5 +62,7 @@ After creating your Code Block dashboard add this code.
 ## Save
 Save the dashboard as released. This ensures the code gets committed. Remember the dashboard is not published yet.
 
+> Note. Anytime you add code to a different file tab, or edit the HTML, you should save as released. Ofcourse if the dashboard is published/released don't do this.
+
 ## Next
 [Setup Navigation](/encompass/setup-navigation)
