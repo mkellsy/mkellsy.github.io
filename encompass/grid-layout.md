@@ -16,6 +16,8 @@ You got the flexbox version to work. Grids are better for layouts. Grids give yo
 > Note. I am creating these code snippits to make coding in the class easier. Please understand what this code does.
 
 ### HTML
+First modify the structure of the HTML to this.
+
 ```html
 <div id="app">
     <div class="nav"></div>
@@ -32,6 +34,44 @@ You got the flexbox version to work. Grids are better for layouts. Grids give yo
 ```
 
 ### CSS
+Now in the CSS tab remove all references to **.selected**, this is moving to an attribute.
+
+Then change the **.body** definition to this.
+
+```less
+.body {
+    flex: 1;
+    overflow: hidden;
+    display: none;
+
+    .item {
+        display: none;
+        border-bottom: 1px #dfdfdf solid;
+        color: #525252;
+        padding: 14px;
+        cursor: pointer;
+        user-select: none;
+
+        @media (min-width: 0px) and (max-width: 815px) {
+            display: block;
+        }
+
+        &:hover {
+            color: #000;
+            background: #efefef;
+        }
+    }
+
+    .content {
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: auto;
+    }
+}
+```
+
+Then modify the main **#app** definition. You are setting up the grid here. And while you are here add the responsive definition too.
+
 ```less
 #app {
     height: 100%;
@@ -43,71 +83,13 @@ You got the flexbox version to work. Grids are better for layouts. Grids give yo
     @media (min-width: 0px) and (max-width: 815px) {
         grid-template-columns: 1fr;
     }
+}
+```
 
-    *[action] > * {
-        pointer-events: none;
-    }
+Now add the definition for the **selected** attribute. This belongs on the bottom of the main **#app** definition.
 
-    .nav {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        box-sizing: border-box;
-        border-bottom: 1px #dfdfdf solid;
-    }
-
-    .menu {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        overflow: auto;
-
-        .item {
-            border-top: 1px #dfdfdf solid;
-            color: #525252;
-            padding: 14px;
-            cursor: pointer;
-            user-select: none;
-
-            &:first-child {
-                border-top: 0 none;
-            }
-
-            &:hover {
-                color: #000;
-                background: #efefef;
-            }
-        }
-    }
-
-    .body {
-        flex: 1;
-        overflow: hidden;
-        display: none;
-
-        .item {
-            display: none;
-            border-bottom: 1px #dfdfdf solid;
-            color: #525252;
-            padding: 14px;
-            cursor: pointer;
-            user-select: none;
-
-            @media (min-width: 0px) and (max-width: 815px) {
-                display: block;
-            }
-
-            &:hover {
-                color: #000;
-                background: #efefef;
-            }
-        }
-
-        .content {
-            padding: 20px;
-            box-sizing: border-box;
-            overflow: auto;
-        }
-    }
-
+```less
+#app {
     &[selected="true"] {
         .menu {
             grid-column-end: 2;
@@ -124,121 +106,48 @@ You got the flexbox version to work. Grids are better for layouts. Grids give yo
 }
 ```
 
-### JavaScript
-```js
-let app = null;
+Then modify the **.nav** definition.
 
-const StateFields = {
-    Action: "String",
-    ItemID: "Integer"
-};
-
-function KeyValue(parameter) {
-    const parts = (parameter || "").split("=");
-
-    return parts.length >= 2 ? { key: parts[0], value: parts[1] } : null;
+```less
+.nav {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    box-sizing: border-box;
+    border-bottom: 1px #dfdfdf solid;
 }
+```
 
-function GetState() {
-    const parameters = ((`${window.location}`).split("?").pop().split("&") || [])
-        .map(parameter => KeyValue(parameter))
-        .filter(parameter => parameter !== null);
+And finally modify the **.menu** definition.
 
-    const results = {};
+```less
+.menu {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    overflow: auto;
 
-    for (let i = 0; i < parameters.length; i++) {
-        results[parameters[i].key] = decodeURIComponent(parameters[i].value);
-    }
+    .item {
+        border-top: 1px #dfdfdf solid;
+        color: #525252;
+        padding: 14px;
+        cursor: pointer;
+        user-select: none;
 
-    return results;
-}
+        &:first-child {
+            border-top: 0 none;
+        }
 
-function SaveState(state) {
-    state = state || {};
-
-    const keys = (Object.keys(state || {})).filter(parameter => parameter !== "" && (state[parameter] || "") !== "");
-    const parameters = keys.map(parameter => `${parameter}=${encodeURIComponent(state[parameter])}`);
-    const current = window.location.href.split("/").pop();
-
-    if (current !== `Home?${parameters.join("&")}`) window.history.pushState(state, "Encompass", `Home?${parameters.join("&")}`);
-
-    app.state = state;
-}
-
-function RestoreState() {
-    app.state = GetState();
-
-    Navigate(app.state);
-}
-
-function Navigate(parameters, fields) {
-    fields = fields || StateFields;
-
-    if (!parameters) return;
-    if (parameters instanceof MouseEvent && !parameters.target.getAttribute("action")) return;
-
-    const state = parameters || {};
-    const { ...updated } = app.state;
-    const keys = Object.keys(fields);
-
-    const type = parameters instanceof MouseEvent ? "element" : "call";
-
-    for (let i = 0; i < keys.length; i += 1) {
-        if (type === "element") state[keys[i]] = parameters.target.getAttribute(keys[i].toLowerCase());
-
-        if (state[keys[i]] === "Null") {
-            updated[keys[i]] = undefined;
-        } else {
-            let value;
-
-            switch (fields[keys[i]].toLowerCase()) {
-                case "integer":
-                    updated[keys[i]] = parseInt(state[keys[i]], 10) || updated[keys[i]];
-                    break;
-
-                case "number":
-                    updated[keys[i]] = parseFloat(state[keys[i]]) || updated[keys[i]];
-                    break;
-
-                case "date":
-                    value = new Date(state[keys[i]]);
-                    updated[keys[i]] = !Number.isNaN(value.getTime()) ? value.toLocaleDateString() : updated[keys[i]];
-                    break;
-
-                case "datetime":
-                    value = new Date(state[keys[i]]);
-                    updated[keys[i]] = !Number.isNaN(value.getTime()) ? value.toLocaleString() : updated[keys[i]];
-                    break;
-
-                default:
-                    updated[keys[i]] = state[keys[i]] && state[keys[i]] !== "" ? state[keys[i]] : updated[keys[i]];
-                    break;
-            }
+        &:hover {
+            color: #000;
+            background: #efefef;
         }
     }
-
-    Action(updated.Action, updated);
 }
+```
 
-function Action(action, state) {
-    switch (action) {
-        default:
-            SaveState(state);
-            DisplayItem(state.ItemID);
-            break;
-    }
-}
+### JavaScript
+First modify the **Main** function. remove the **add.menu** and **app.content.item** elements.
 
-function DisplayItem(ItemID) {
-    if (ItemID && !Number.isNaN(parseInt(ItemID, 10))) {
-        app.setAttribute("selected", "true");
-        app.content.innerHTML = `Item: ${ItemID}`;
-    } else {
-        app.setAttribute("selected", "false");
-        app.content.innerHTML = "";
-    }
-}
-
+```js
 function Main() {
     app = dashboardItem.querySelector("#app");
 
@@ -255,8 +164,20 @@ function Main() {
 
     return true;
 }
+```
 
-Main();
+Then simplify the **DisplayItem** function.
+
+```js
+function DisplayItem(ItemID) {
+    if (ItemID && !Number.isNaN(parseInt(ItemID, 10))) {
+        app.setAttribute("selected", "true");
+        app.content.innerHTML = `Item: ${ItemID}`;
+    } else {
+        app.setAttribute("selected", "false");
+        app.content.innerHTML = "";
+    }
+}
 ```
 
 ## Save
