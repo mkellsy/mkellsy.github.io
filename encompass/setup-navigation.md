@@ -7,8 +7,20 @@ This code is common. Understand what it does, but for the most part you don't ne
 
 > Note. I am creating these code snippits to make coding in the class easier. Please understand what this code does.
 
+### CSS
+Add this definition to the #app definition.
+
+```less
+#app {
+    *[action] > * {
+        pointer-events: none;
+    }
+}
+```
+
 ### JavaScript
 Add this code the the JavaScript tab.
+
 ```js
 let app = null;
 
@@ -132,6 +144,7 @@ Main();
 
 **Testing Script**
 Add this code to the Test Script tab.
+
 ```js
 /* eslint-disable prefer-arrow-callback */
 /* eslint-disable no-unused-expressions */
