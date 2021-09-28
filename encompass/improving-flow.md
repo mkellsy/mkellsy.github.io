@@ -242,7 +242,7 @@ function Main() {
     if (!app) return false;
 
     app.testing = app.getAttribute("test") === "true";
-    app.content = app.querySelector(".content");
+    app.content = app.querySelector(".item-display");
     app.menu = app.querySelector(".menu");
     app.state = GetState();
 
