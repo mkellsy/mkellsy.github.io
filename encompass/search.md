@@ -57,7 +57,7 @@ Now lets add the sub-definitions. Start by definining the **input** element.
 }
 ```
 
-> Note. WE are not using a class name here, since the **search** element only has one input field.
+> Note. We are not using a class name here, since the **search** element only has one input field.
 
 Finally we need to define the **.button** element.
 
