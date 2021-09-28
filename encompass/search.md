@@ -83,6 +83,16 @@ Finally we need to define the **.button** element.
 ```
 
 ### JavaScript
+First define the **Search** parameter on the top of the file.
+
+```js
+const StateFields = {
+    Action: "String",
+    ItemID: "Integer",
+    Search: "String"
+};
+```
+
 Add the **ProcessSearch** function. This is responsiable for taking the input field and adding it to the `state` object.
 
 ```js
@@ -101,7 +111,7 @@ function ProcessSearch(event) {
 
 > Note. The search bar is a form, and we want to call this function when that form submits. However we don't want the form to actually submit.
 
-Then modify the **Action** function. You need to add the **Search** action for the button.
+Then modify the **Action** function. You need to add the **Search** action for the button. Also add the new **Search** parameter to the **DisplayItem** call.
 
 ```js
 function Action(action, state) {
@@ -112,7 +122,7 @@ function Action(action, state) {
 
         default:
             SaveState(state);
-            DisplayItem(state.ItemID);
+            DisplayItem(state.ItemID, state.Search);
             break;
     }
 }
