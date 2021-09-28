@@ -10,17 +10,12 @@ Now we have a layout, lets give the layout something to do. Let's make some acti
 > Note. I am creating these code snippits to make coding in the class easier. Please understand what this code does.
 
 ### HTML
+Modify the menu element in the HTML tab.
 ```html
-<div id="app">
-    <div class="nav"></div>
-    <div class="body">
-        <div class="menu">
-            <div class="item" action="View" itemid="1">Item 1</div>
-            <div class="item" action="View" itemid="2">Item 2</div>
-            <div class="item" action="View" itemid="3">Item 3</div>
-        </div>
-        <div class="content"></div>
-    </div>
+<div class="menu">
+    <div class="item" action="View" itemid="1">Item 1</div>
+    <div class="item" action="View" itemid="2">Item 2</div>
+    <div class="item" action="View" itemid="3">Item 3</div>
 </div>
 ```
 
