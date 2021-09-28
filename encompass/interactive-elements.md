@@ -11,6 +11,7 @@ Now we have a layout, lets give the layout something to do. Let's make some acti
 
 ### HTML
 Modify the menu element in the HTML tab.
+
 ```html
 <div class="menu">
     <div class="item" action="View" itemid="1">Item 1</div>
@@ -20,190 +21,67 @@ Modify the menu element in the HTML tab.
 ```
 
 ### CSS
+Modify the **.menu** definition in the **.body** definition.
+
 ```less
-#app {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.menu {
+    flex: 1;
+    background: #66c;
 
-    *[action] > * {
-        pointer-events: none;
+    &.selected {
+        flex: unset;
+        width: 200px;
+
+        @media (min-width: 0px) and (max-width: 815px) {
+            display: none;
+        }
     }
 
-    .nav {
-        height: 50px;
-        background: #369;
-    }
+    .item {
+        border-top: 1px #ccf solid;
+        color: #ccf;
+        padding: 14px;
+        cursor: pointer;
+        user-select: none;
 
-    .body {
-        flex: 1;
-        display: flex;
-        flex-direction: row;
-
-        .menu {
-            flex: 1;
-            background: #66c;
-
-            &.selected {
-                flex: unset;
-                width: 200px;
-
-                @media (min-width: 0px) and (max-width: 815px) {
-                    display: none;
-                }
-            }
-
-            .item {
-                border-top: 1px #ccf solid;
-                color: #ccf;
-                padding: 14px;
-                cursor: pointer;
-                user-select: none;
-
-                &:first-child {
-                    border-top: 0 none;
-                }
-
-                &:hover {
-                    background: #369;
-                }
-            }
+        &:first-child {
+            border-top: 0 none;
         }
 
-        .content {
-            flex: 1;
-            display: none;
-            background: #ccf;
-
-            &.selected {
-                display: block;
-            }
+        &:hover {
+            background: #369;
         }
     }
 }
 ```
 
-### JavaScript
-```js
-let app = null;
+Modify the **.content** definition in the **.body** definition.
 
+```less
+.content {
+    flex: 1;
+    display: none;
+    background: #ccf;
+
+    &.selected {
+        display: block;
+    }
+}
+```
+
+### JavaScript
+First add the **ItemID** parameter to the **StateFields**.
+
+```js
 const StateFields = {
     Action: "String",
     ItemID: "Integer"
 };
+```
 
-function KeyValue(parameter) {
-    const parts = (parameter || "").split("=");
+Modify the **Main** function. Add the **app.content** and **app.menu** elements.
 
-    return parts.length >= 2 ? { key: parts[0], value: parts[1] } : null;
-}
-
-function GetState() {
-    const parameters = ((`${window.location}`).split("?").pop().split("&") || [])
-        .map(parameter => KeyValue(parameter))
-        .filter(parameter => parameter !== null);
-
-    const results = {};
-
-    for (let i = 0; i < parameters.length; i++) {
-        results[parameters[i].key] = decodeURIComponent(parameters[i].value);
-    }
-
-    return results;
-}
-
-function SaveState(state) {
-    state = state || {};
-
-    const keys = (Object.keys(state || {})).filter(parameter => parameter !== "" && (state[parameter] || "") !== "");
-    const parameters = keys.map(parameter => `${parameter}=${encodeURIComponent(state[parameter])}`);
-    const current = window.location.href.split("/").pop();
-
-    if (current !== `Home?${parameters.join("&")}`) window.history.pushState(state, "Encompass", `Home?${parameters.join("&")}`);
-
-    app.state = state;
-}
-
-function RestoreState() {
-    app.state = GetState();
-
-    Navigate(app.state);
-}
-
-function Navigate(parameters, fields) {
-    fields = fields || StateFields;
-
-    if (!parameters) return;
-    if (parameters instanceof MouseEvent && !parameters.target.getAttribute("action")) return;
-
-    const state = parameters || {};
-    const { ...updated } = app.state;
-    const keys = Object.keys(fields);
-
-    const type = parameters instanceof MouseEvent ? "element" : "call";
-
-    for (let i = 0; i < keys.length; i += 1) {
-        if (type === "element") state[keys[i]] = parameters.target.getAttribute(keys[i].toLowerCase());
-
-        if (state[keys[i]] === "Null") {
-            updated[keys[i]] = undefined;
-        } else {
-            let value;
-
-            switch (fields[keys[i]].toLowerCase()) {
-                case "integer":
-                    updated[keys[i]] = parseInt(state[keys[i]], 10) || updated[keys[i]];
-                    break;
-
-                case "number":
-                    updated[keys[i]] = parseFloat(state[keys[i]]) || updated[keys[i]];
-                    break;
-
-                case "date":
-                    value = new Date(state[keys[i]]);
-                    updated[keys[i]] = !Number.isNaN(value.getTime()) ? value.toLocaleDateString() : updated[keys[i]];
-                    break;
-
-                case "datetime":
-                    value = new Date(state[keys[i]]);
-                    updated[keys[i]] = !Number.isNaN(value.getTime()) ? value.toLocaleString() : updated[keys[i]];
-                    break;
-
-                default:
-                    updated[keys[i]] = state[keys[i]] && state[keys[i]] !== "" ? state[keys[i]] : updated[keys[i]];
-                    break;
-            }
-        }
-    }
-
-    Action(updated.Action, updated);
-}
-
-function Action(action, state) {
-    switch (action) {
-        case "View":
-            SaveState(state);
-            DisplayItem(state.ItemID);
-            break;
-
-        default:
-            SaveState(state);
-            break;
-    }
-}
-
-function DisplayItem(ItemID) {
-    if (ItemID && !Number.isNaN(parseInt(ItemID, 10))) {
-        app.menu.className = "menu selected";
-        app.content.className = "content selected";
-        app.content.innerHTML = `Item: ${ItemID}`;
-    } else {
-        app.menu.className = "menu";
-        app.content.className = "content";
-        app.content.innerHTML = "";
-    }
-}
-
+```js
 function Main() {
     app = dashboardItem.querySelector("#app");
 
@@ -221,8 +99,39 @@ function Main() {
 
     return true;
 }
+```
 
-Main();
+Add the **DisplayItem** function.
+
+```js
+function DisplayItem(ItemID) {
+    if (ItemID && !Number.isNaN(parseInt(ItemID, 10))) {
+        app.menu.className = "menu selected";
+        app.content.className = "content selected";
+        app.content.innerHTML = `Item: ${ItemID}`;
+    } else {
+        app.menu.className = "menu";
+        app.content.className = "content";
+        app.content.innerHTML = "";
+    }
+}
+```
+
+Then finally modify the **Action** function and add the **View** action.
+
+```js
+function Action(action, state) {
+    switch (action) {
+        case "View":
+            SaveState(state);
+            DisplayItem(state.ItemID);
+            break;
+
+        default:
+            SaveState(state);
+            break;
+    }
+}
 ```
 
 ## Save
