@@ -392,3 +392,4 @@ describe("State Functions", function () {
 Now let's save. Remember to test, make sure the coverage is at 100%.
 
 ## Next
+[Grid Layout](/encompass/grid-layout)
