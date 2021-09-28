@@ -42,6 +42,7 @@ Making actionalble items.
 
         .menu {
             flex: 1;
+            background: #66c;
 
             &.selected {
                 flex: unset;
