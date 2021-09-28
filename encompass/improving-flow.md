@@ -271,13 +271,8 @@ app.setAttribute("test", "true");
 
 it("Main", function () {
     expect(Main()).to.be.true;
-
-    // MESS UP THE ID
     app.id = "foobar";
-
     expect(Main()).to.be.false;
-
-    // FIX THE ID
     app.id = "app";
 });
 
