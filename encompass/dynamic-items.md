@@ -1,5 +1,4 @@
 # Dynamic Items
-
 The three HTML items are cute, but lets add some more fields so we can work with this interface.
 
 I am not adding the JSON to this document to save space. You can download the JSON data here [https://tinyurl.com/26uaruec](https://tinyurl.com/26uaruec).
