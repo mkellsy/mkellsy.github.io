@@ -176,3 +176,4 @@ it("Display Item", function () {
 Now let's save. Remember to test, make sure the coverage is at 100%.
 
 ## Next
+[Search](/encompass/search)
