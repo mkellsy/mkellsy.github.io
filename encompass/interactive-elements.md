@@ -1,10 +1,17 @@
-## Interactive Elements
+# Interactive Elements
 
-Making actionalble items.
+Now we have a layout, lets give the layout something to do. Let's make some actionalble items.
+
+## Code
+Here we are going to modify the HTML and add some action items.
+
+Then we are going to add an `ItemID` parameter, and a `View` action.
+
+Also we are going to hide the right panel if nothing is selected. To do this we will need to map the content and menu boxes.
 
 > Note. I am creating these code snippits to make coding in the class easier. Please understand what this code does.
 
-**HTML**
+### HTML
 ```html
 <div id="app">
     <div class="nav"></div>
@@ -19,7 +26,7 @@ Making actionalble items.
 </div>
 ```
 
-**CSS**
+### CSS
 ```less
 #app {
     height: 100%;
@@ -83,7 +90,7 @@ Making actionalble items.
 }
 ```
 
-**JavaScript**
+### JavaScript
 ```js
 let app = null;
 
@@ -224,3 +231,8 @@ function Main() {
 
 Main();
 ```
+
+## Save
+Now let's save. You don't need to save as released here. In fact you can save yourself some time by not saving here. However you should run the test scripts before saving as a draft.
+
+## Next
