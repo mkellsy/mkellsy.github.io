@@ -46,4 +46,4 @@ After creating your Code Block dashboard add this code.
 ```
 
 ## Next
-[Setup Navigation](/encompass/mobile-first-part-1)
+[Setup Navigation](/encompass/mobile-first-part-2)
