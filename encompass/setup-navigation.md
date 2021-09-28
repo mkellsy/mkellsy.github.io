@@ -1,5 +1,4 @@
 # Setup Navigation
-
 This is common code I use for all my dashboards. It handles all necessary browser navigation using a `state` object.
 
 ## Code
