@@ -1,6 +1,6 @@
 # Layout Using Flexbox
+First create youir dashboard.
 
-## Create Dashboard
 1. First create a new dashboard. Set the name to **Mobile-First** and the category to **Training**.
 2. Then select the **Blank** layout.
 3. Add a **Code Block** item.
@@ -11,6 +11,8 @@ After creating your Code Block dashboard add this code.
 > Note. I am creating these code snippits to make coding in the class easier. Please understand what this code does.
 
 ### HTML
+Add this code to the HTML tab.
+
 ```html
 <div id="app">
     <div class="nav"></div>
@@ -22,6 +24,8 @@ After creating your Code Block dashboard add this code.
 ```
 
 ### CSS
+Add this code to the CSS tab.
+
 ```less
 #app {
     height: 100%;
@@ -61,6 +65,8 @@ After creating your Code Block dashboard add this code.
 
 ## Save
 Save the dashboard as released. This ensures the code gets committed. Remember the dashboard is not published yet.
+
+Then go to the [Training Dashboards](https://support.encompass8.com/Home?DashboardID=100100&TableName=ZZ_TrainingDashboards) table and add your bashboard to the list.
 
 > Note. Anytime you add code to a different file tab, or edit the HTML, you should save as released. Ofcourse if the dashboard is published/released don't do this.
 
