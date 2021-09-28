@@ -172,5 +172,3 @@ function DisplayItem(ItemID, Search) {
 
 ## Save
 Now let's save. Remember to test, make sure the coverage is at 100%.
-
-## Next
