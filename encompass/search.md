@@ -143,6 +143,8 @@ function Main() {
 }
 ```
 
+> Note. The reson why we are adding a listener on the search form, and we have a button action is, it gives the user the choice to press the enter key or press the search button. Remember we are making an interface that works on devices without a keyboard or mouse.
+
 ### Testing
 First, we added a new function. So now we need to add the **Process Search** test case.
 
