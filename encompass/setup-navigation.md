@@ -1,10 +1,13 @@
-## Setup Navigation
+### Setup Navigation
 
-This code handles all necessary browser navigation.
+This is common code I use for all my dashboards. It handles all necessary browser navigation using a `state` object.
+
+## Code
+This code is common. Understand what it does, but for the most part you don't need to modify this part.
 
 > Note. I am creating these code snippits to make coding in the class easier. Please understand what this code does.
 
-**HTML**
+### HTML
 ```html
 <div id="app">
     <div class="nav"></div>
@@ -15,7 +18,7 @@ This code handles all necessary browser navigation.
 </div>
 ```
 
-**CSS**
+### CSS
 ```less
 #app {
     height: 100%;
@@ -49,7 +52,7 @@ This code handles all necessary browser navigation.
 }
 ```
 
-**JavaScript**
+### JavaScript
 ```js
 let app = null;
 
@@ -287,6 +290,11 @@ describe("State Functions", function () {
     }).timeout(80000);
 });
 ```
+
+## Save
+Again save as released. You are adding new files and you want to ensure they get committed.
+
+> Note. Anytime you add code to a different file tab, or edit the HTML, you should save as released. Ofcourse if the dashboard is published/released don't do this.
 
 ## Next
 [Interactive Elements](/encompass/interactive-elements)
