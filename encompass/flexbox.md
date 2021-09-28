@@ -1,10 +1,16 @@
-## Layout Using Flexbox
+# Layout Using Flexbox
 
+## Create Dashboard
+1. First create a new dashboard. Set the name to **Mobile-First** and the category to **Training**.
+2. Then select the **Blank** layout.
+3. Add a **Code Block** item.
+
+## Code
 After creating your Code Block dashboard add this code.
 
 > Note. I am creating these code snippits to make coding in the class easier. Please understand what this code does.
 
-**HTML**
+### HTML
 ```html
 <div id="app">
     <div class="nav"></div>
@@ -15,7 +21,7 @@ After creating your Code Block dashboard add this code.
 </div>
 ```
 
-**CSS**
+### CSS
 ```less
 #app {
     height: 100%;
@@ -44,6 +50,17 @@ After creating your Code Block dashboard add this code.
     }
 }
 ```
+
+## Configure Dashboard
+1. Turn off the header from the settings snack.
+2. Open the settings, its the cogs icon in the settings snack.
+3. Clear the all fields for margin, padding and border.
+4. Clear the fields for border color and border radius.
+5. Set the height field to **100%**.
+6. Set the auto fill row height setting to **Yes**.
+
+## Save
+Save the dashboard as released. This ensures the code gets committed. Remember the dashboard is not published yet.
 
 ## Next
 [Setup Navigation](/encompass/setup-navigation)
