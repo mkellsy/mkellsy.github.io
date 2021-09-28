@@ -118,7 +118,7 @@ function Action(action, state) {
 }
 ```
 
-Finally, add the **app.search** and **app.search.input** elements to the **Main** function.
+Finally, add the **app.search** and **app.search.input** elements to the **Main** function Also add the **submit** listener to the **add.search** element.
 
 ```js
 function Main() {
@@ -135,6 +135,7 @@ function Main() {
 
     window.addEventListener("popstate", RestoreState);
     app.addEventListener("click", Navigate);
+    app.search.addEventListener("submit", ProcessSearch);
 
     Navigate(app.state);
 
