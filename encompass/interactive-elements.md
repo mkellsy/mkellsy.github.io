@@ -23,7 +23,7 @@ Modify the menu element in the HTML tab.
 ### CSS
 Modify the **.menu** definition in the **.body** definition.
 
-```less
+```css
 .menu {
     flex: 1;
     background: #66c;
@@ -57,7 +57,7 @@ Modify the **.menu** definition in the **.body** definition.
 
 Modify the **.content** definition in the **.body** definition.
 
-```less
+```css
 .content {
     flex: 1;
     display: none;
