@@ -1,4 +1,6 @@
-# Interactive Elements
+[Flexbox](/encompass/flexbox) - [Navigation](/encompass/setup-navigation) - **Items** - [Flow](/encompass/improving-flow) - [Grids](/encompass/grid-layout) - [Dynamic Items](/encompass/dynamic-items) - [Search](/encompass/search) - [Responsive Content](/encompass/responsive-content) - [Complete Code](/encompass/complete-code)
+
+# Interactive Items
 
 Now we have a layout, lets give the layout something to do. Let's make some actionalble items.
 
