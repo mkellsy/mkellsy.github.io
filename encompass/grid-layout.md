@@ -1,3 +1,5 @@
+[Flexbox](/encompass/flexbox) - [Navigation](/encompass/setup-navigation) - [Items](/encompass/interactive-elements) - [Flow](/encompass/improving-flow) - **Grids** - [Dynamic Items](/encompass/dynamic-items) - [Search](/encompass/search) - [Responsive Content](/encompass/responsive-content) - [Complete Code](/encompass/complete-code)
+
 # Grid Layout
 
 You got the flexbox version to work. Grids are better for layouts. Grids give you more control over the layout from CSS. This helps with reactive interfaces.
