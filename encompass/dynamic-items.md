@@ -19,7 +19,7 @@ First modify the **menu** element in the HTML tab. Remove the children.
 ### CSS
 Add the **.active** definition to the **.item** defintion in the **.menu** definition.
 
-```less
+```css
 .menu {
     .item {
         &.active {
@@ -42,7 +42,7 @@ Add the **.active** definition to the **.item** defintion in the **.menu** defin
 
 Then modify the **.menu** definition. Keep the sub-definition, just modify the directives to this. We are adding interactive scrollbars here.
 
-```less
+```css
 .menu {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -60,7 +60,7 @@ Then modify the **.menu** definition. Keep the sub-definition, just modify the d
 
 Now add the definition for the **selected** attribute. This belongs on the bottom of the main **#app** definition.
 
-```less
+```css
 #app {
     &[selected="true"] {
         .menu {
@@ -80,7 +80,7 @@ Now add the definition for the **selected** attribute. This belongs on the botto
 
 Then do the same for the **.content** definition in the **.body** definition.
 
-```less
+```css
 .content {
     padding: 20px;
     box-sizing: border-box;
