@@ -1,3 +1,5 @@
+[Flexbox](/encompass/flexbox) - [Navigation](/encompass/setup-navigation) - [Items](/encompass/interactive-elements) - [Flow](/encompass/improving-flow) - [Grids](/encompass/grid-layout) - [Dynamic Items](/encompass/dynamic-items) - [Search](/encompass/search) - **Responsive Content** - [Complete Code](/encompass/complete-code)
+
 # Responsive Content
 Your UI is looking sweet! Now we just need to show the content from the items array.
 
