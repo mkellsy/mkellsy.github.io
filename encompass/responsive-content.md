@@ -63,7 +63,7 @@ Add the new **.info** definition to the **.content** definition.
 
 Now we need to define the new **.image** element.
 
-```css
+```less
 #app {
     ...
 
