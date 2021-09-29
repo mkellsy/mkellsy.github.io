@@ -72,4 +72,4 @@ Save the dashboard as released. This ensures the code gets committed. Remember t
 Then go to the [Training Dashboards](https://support.encompass8.com/Home?DashboardID=100100&TableName=ZZ_TrainingDashboards) table and add your bashboard to the list.
 
 ## Next
-[Responsive Content](/encompass/responsive-content)
+[Boilerplate](/encompass/boilerplate)
