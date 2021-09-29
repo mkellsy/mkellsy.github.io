@@ -3,7 +3,7 @@
 # Layout Using Grids
 You got the flexbox version to work. Grids are better for layouts. Grids give you more control over the layout from CSS. This helps with reactive interfaces.
 
-First create youir dashboard.
+First create your dashboard.
 
 1. First create a new dashboard. Set the name to **Mobile-First (Grid)** and the category to **Training**.
 2. Then select the **Blank** layout.
