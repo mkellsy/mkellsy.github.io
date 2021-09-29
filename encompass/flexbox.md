@@ -26,7 +26,7 @@ Add this code to the HTML tab.
 ### CSS
 Add this code to the CSS tab.
 
-```less
+```css
 #app {
     height: 100%;
     display: flex;
