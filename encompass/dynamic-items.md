@@ -1,3 +1,5 @@
+[Flexbox](/encompass/flexbox) - [Navigation](/encompass/setup-navigation) - [Items](/encompass/interactive-elements) - [Flow](/encompass/improving-flow) - [Grids](/encompass/grid-layout) - **Dynamic Items** - [Search](/encompass/search) - [Responsive Content](/encompass/responsive-content) - [Complete Code](/encompass/complete-code)
+
 # Dynamic Items
 The three HTML items are cute, but lets add some more fields so we can work with this interface.
 
