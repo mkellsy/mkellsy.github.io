@@ -1,4 +1,4 @@
-[Flexbox](/encompass/flexbox) - [Grids](/encompass/grids) - [Boilerplate](/encompass/boilerplate) - **Responsive Content**
+[Introduction](/encompass/introduction) - [Flexbox](/encompass/flexbox) - [Grids](/encompass/grids) - [Boilerplate](/encompass/boilerplate) - **Responsive Content** - [Conclusion](/encompass/conclusion)
 
 # Responsive Content
 We are going to edit the boilerplate code to show information from the item object.
