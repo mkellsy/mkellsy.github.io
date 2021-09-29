@@ -1,4 +1,4 @@
-**Flexbox** - [Grids](/encompass/grids) - [Boilerplate](/encompass/boilerplate) - [Responsive Content](/encompass/responsive-content)
+[Introduction](/encompass/introduction) - **Flexbox** - [Grids](/encompass/grids) - [Boilerplate](/encompass/boilerplate) - [Responsive Content](/encompass/responsive-content) - [Conclusion](/encompass/conclusion)
 
 # Layout Using Flexbox
 First create your dashboard.
