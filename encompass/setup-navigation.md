@@ -7,7 +7,7 @@ This code is common. Understand what it does, but for the most part you don't ne
 > Note. I am creating these code snippits to make coding in the class easier. Please understand what this code does.
 
 ### CSS
-Add this definition to the #app definition.
+Add this definition to the **#app** definition.
 
 ```css
 #app {
