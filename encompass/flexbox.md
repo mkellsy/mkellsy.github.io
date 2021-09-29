@@ -74,7 +74,5 @@ Save the dashboard as released. This ensures the code gets committed. Remember t
 
 Then go to the [Training Dashboards](https://support.encompass8.com/Home?DashboardID=100100&TableName=ZZ_TrainingDashboards) table and add your bashboard to the list.
 
-> Note. Anytime you add code to a different file tab, or edit the HTML, you should save as released. Ofcourse if the dashboard is published/released don't do this.
-
 ## Next
 [Setup Navigation](/encompass/setup-navigation)
