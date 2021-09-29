@@ -1,4 +1,4 @@
-[Flexbox](/encompass/flexbox) - [Grids](/encompass/grids) - **Boilerplate** - [Responsive Content](/encompass/responsive-content)
+[Introduction](/encompass/introduction) - [Flexbox](/encompass/flexbox) - [Grids](/encompass/grids) - **Boilerplate** - [Responsive Content](/encompass/responsive-content) - [Conclusion](/encompass/conclusion)
 
 # Boilerplate Code
 We need to add some content for the next part. Here we are just going to copy over some code to work with.
