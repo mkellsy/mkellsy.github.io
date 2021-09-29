@@ -1,3 +1,5 @@
+[Flexbox](/encompass/flexbox) - [Navigation](/encompass/setup-navigation) - [Items](/encompass/interactive-elements) - [Flow](/encompass/improving-flow) - [Grids](/encompass/grid-layout) - [Dynamic Items](/encompass/dynamic-items) - **Search** - [Responsive Content](/encompass/responsive-content) - [Complete Code](/encompass/complete-code)
+
 # Search
 Notice we have a blank nav bar on the top of this interface. This is the perfect place for a search bar.
 
