@@ -268,4 +268,4 @@ Again save as released. You are adding new files and you want to ensure they get
 > Note. Anytime you add code to a different file tab, or edit the HTML, you should save as released. Ofcourse if the dashboard is published/released don't do this.
 
 ## Next
-[Interactive Elements](/encompass/interactive-elements)
+[Interactive Items](/encompass/interactive-elements)
