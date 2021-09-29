@@ -28,7 +28,7 @@ First modify the **content** element. Seperate the content so we can add a back 
 ### CSS
 Now modify the **.content** definition in the **.body** definition.
 
-```less
+```css
 .content {
     flex: 1;
     display: none;
@@ -63,7 +63,7 @@ Now modify the **.content** definition in the **.body** definition.
 
 Then modify the **.nav** definition.
 
-```less
+```css
 .nav {
     height: 50px;
     border-bottom: 1px #dfdfdf solid;
@@ -72,7 +72,7 @@ Then modify the **.nav** definition.
 
 Then modify the **.menu** definition in the **.body** definition.
 
-```less
+```css
 .menu {
     flex: 1;
 
