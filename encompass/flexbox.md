@@ -70,7 +70,7 @@ Add this code to the CSS tab.
 6. Set the auto fill row height setting to **Yes**.
 
 ## Save
-Save the dashboard as released. This ensures the code gets committed. Remember the dashboard is not published yet.
+Save the dashboard as released. This ensures the code gets committed. Remember the dashboard is not published.
 
 Then go to the [Training Dashboards](https://support.encompass8.com/Home?DashboardID=100100&TableName=ZZ_TrainingDashboards) table and add your bashboard to the list.
 
