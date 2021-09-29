@@ -22,7 +22,7 @@ Modify the HTML. Replace the **nav** element with this new **search** element.
 ### CSS
 Now we need to make some changes to the CSS. Now that we have a grid layout this is pretty easy, just focus on the style. Replace the **.nav** definition with this new **.search** definition.
 
-```less
+```css
 .search {
     display: flex;
     align-items: center;
@@ -36,7 +36,7 @@ Now we need to make some changes to the CSS. Now that we have a grid layout this
 
 Now lets add the sub-definitions. Start by definining the **input** element.
 
-```less
+```css
 .search {
     input {
         flex: 1;
@@ -63,7 +63,7 @@ Finally we need to define the **.button** element.
 
 > There are buttons in the UI Kit, however we want to crash the button into the search field. This helps the UX design, it's subtle, but it's enough to add an association between the button and the field.
 
-```less
+```css
 .search {
     .button {
         display: flex;
