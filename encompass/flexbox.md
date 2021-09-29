@@ -1,7 +1,7 @@
 **Flexbox** - [Grids](/encompass/grids) - [Boilerplate](/encompass/boilerplate)
 
 # Layout Using Flexbox
-First create youir dashboard.
+First create your dashboard.
 
 1. First create a new dashboard. Set the name to **Mobile-First (Flex)** and the category to **Training**.
 2. Then select the **Blank** layout.
