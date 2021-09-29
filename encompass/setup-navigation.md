@@ -9,7 +9,7 @@ This code is common. Understand what it does, but for the most part you don't ne
 ### CSS
 Add this definition to the #app definition.
 
-```less
+```css
 #app {
     *[action] > * {
         pointer-events: none;
