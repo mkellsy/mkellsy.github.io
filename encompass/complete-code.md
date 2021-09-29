@@ -1,3 +1,5 @@
+[Flexbox](/encompass/flexbox) - [Navigation](/encompass/setup-navigation) - [Items](/encompass/interactive-elements) - [Flow](/encompass/improving-flow) - [Grids](/encompass/grid-layout) - [Dynamic Items](/encompass/dynamic-items) - [Search](/encompass/search) - [Responsive Content](/encompass/responsive-content) - **Complete Code**
+
 # Complete Code
 I know sometimes things don't go as planned. Here it the complete code, maybe you missed something/
 
