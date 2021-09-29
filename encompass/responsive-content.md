@@ -1,7 +1,7 @@
-[Flexbox](/encompass/flexbox) - [Navigation](/encompass/setup-navigation) - [Items](/encompass/interactive-elements) - [Flow](/encompass/improving-flow) - [Grids](/encompass/grid-layout) - [Dynamic Items](/encompass/dynamic-items) - [Search](/encompass/search) - **Responsive Content** - [Complete Code](/encompass/complete-code)
+[Flexbox](/encompass/flexbox) - [Grids](/encompass/grids) - [Boilerplate](/encompass/boilerplate) - **Responsive Content**
 
 # Responsive Content
-Your UI is looking sweet! Now we just need to show the content from the items array.
+We are going to edit the boilerplate code to show information from the item object.
 
 ## Code
 * Modify the HTML, add containers for the info and the image.
@@ -21,54 +21,39 @@ Modify the HTML. Modify the **content** element, add the **info** and **image** 
 ```
 
 ### CSS
-First we need to modify the **.content** definition in the **.body** definition. You need to modify the display so we can show the info and image side-by-side. Then add an overlayed responsive definition that converts the layout to a top-and-bottom display.
+Add the new **.info** definition to the **.content** definition.
 
-```css
-.content {
-    display: flex;
-    align-items: flex-start;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow: hidden;
+```less
+#app {
+    ...
 
-    &:hover {
-        overflow: overlay;
-    }
+    .body {
+        ...
 
-    @media (min-width: 0px) and (max-width: 1015px) {
-        align-items: unset;
-        flex-direction: column;
-    }
+        .content {
+            ...
 
-    @media (min-width: 0px) and (max-width: 815px) {
-        overflow: auto;
-    }
-}
-```
+            .info {
+                flex: 1;
+                border: 1px #dfdfdf solid;
+                word-break: break-all;
+                border-radius: 3px;
+                padding: 20px;
+                margin: 0 20px 0 0;
 
-Then add the new **.info** definition to the **.content** definition.
+                @media (min-width: 816px) and (max-width: 1015px) {
+                    margin: 20px 0 0 0;
+                    order: 2;
+                }
 
-```css
-.content {
-    .info {
-        flex: 1;
-        border: 1px #dfdfdf solid;
-        word-break: break-all;
-        border-radius: 3px;
-        padding: 20px;
-        margin: 0 20px 0 0;
-
-        @media (min-width: 816px) and (max-width: 1015px) {
-            margin: 20px 0 0 0;
-            order: 2;
-        }
-
-        @media (min-width: 0px) and (max-width: 815px) {
-            margin: 20px 0 0 0;
-            padding: 0;
-            border-radius: unset;
-            border: 0 none;
-            order: 2;
+                @media (min-width: 0px) and (max-width: 815px) {
+                    margin: 20px 0 0 0;
+                    padding: 0;
+                    border-radius: unset;
+                    border: 0 none;
+                    order: 2;
+                }
+            }
         }
     }
 }
@@ -76,28 +61,38 @@ Then add the new **.info** definition to the **.content** definition.
 
 > Note. There are two responsive definitions here, that do not overlap. This is because we want to do different things for narrow and medium screens. Also note that we are setting the `order` to **2**, this will force the information to display after the image on narrow and medium screens.
 
-Finally we need to define the **.button** element.
+Now we need to define the new **.image** element.
 
 ```css
-.content {
-    .image {
-        padding: 20px;
-        border: 1px #dfdfdf solid;
-        border-radius: 3px;
+#app {
+    ...
 
-        img {
-            width: 280px;
-            max-width: 280px;
-            max-height: 800px;
+    .body {
+        ...
 
-            @media (min-width: 0px) and (max-width: 1015px) {
-                order: 1;
+        .content {
+            ...
+
+            .image {
+                padding: 20px;
+                border: 1px #dfdfdf solid;
+                border-radius: 3px;
 
                 img {
-                    width: unset;
-                    height: 400px;
-                    max-width: 100%;
-                    max-height: 400px;
+                    width: 280px;
+                    max-width: 280px;
+                    max-height: 800px;
+
+                    @media (min-width: 0px) and (max-width: 1015px) {
+                        order: 1;
+
+                        img {
+                            width: unset;
+                            height: 400px;
+                            max-width: 100%;
+                            max-height: 400px;
+                        }
+                    }
                 }
             }
         }
@@ -107,35 +102,32 @@ Finally we need to define the **.button** element.
 
 > Note. The responsive definition covers both narrow and medium screens, we actually do the same thing for both sizes. Also the `order` is set to **1**, this makes the image display before the info.
 
-### JavaScript
-First add the **app.content.info** and **app.content.image** elements to the **Main** function.
+Finally lets define what happens when the **selected** attrubute is set to **true**.
 
-```js
-function Main() {
-    app = dashboardItem.querySelector("#app");
+```less
+#app {
+    ...
 
-    if (!app) return false;
+    &[selected="true"] {
+        .menu {
+            grid-column-end: 2;
 
-    app.testing = app.getAttribute("test") === "true";
-    app.search = app.querySelector(".search");
-    app.search.input = app.search.querySelector("input");
-    app.content = app.querySelector(".content");
-    app.content.info = app.content.querySelector(".info");
-    app.content.image = app.content.querySelector(".image");
-    app.menu = app.querySelector(".menu");
-    app.state = GetState();
+            @media (min-width: 0px) and (max-width: 815px) {
+                display: none;
+            }
+        }
 
-    window.addEventListener("popstate", RestoreState);
-    app.addEventListener("click", Navigate);
-    app.search.addEventListener("submit", ProcessSearch);
-
-    Navigate(app.state);
-
-    return true;
+        .body {
+            display: block;
+        }
+    }
 }
 ```
 
-Now let's modify the **DisplayItem** function. We need to find the item from the item array. Then we need to modify what it displays.
+> Note. We are adding this to the end of the **#app** definition. This tells the browser only do this if the app element has an attribute called selected and it is set to true.
+
+### JavaScript
+Let's modify the **DisplayItem** function. We need to find the item from the item array. Then we need to modify what it displays.
 
 ```js
 function DisplayItem(ItemID, Search) {
@@ -176,4 +168,4 @@ function DisplayItem(ItemID, Search) {
 Now let's save. Remember to test, make sure the coverage is at 100%.
 
 ## Next
-[Complete Code](/encompass/complete-code)
+[Conclusion](/encompass/conclusion)
