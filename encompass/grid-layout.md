@@ -38,7 +38,7 @@ Now in the CSS tab remove all references to **.selected**, this is moving to an 
 
 Then change the **.body** definition to this.
 
-```less
+```css
 .body {
     flex: 1;
     overflow: hidden;
@@ -72,7 +72,7 @@ Then change the **.body** definition to this.
 
 Then modify the main **#app** definition. You are setting up the grid here. And while you are here add the responsive definition too.
 
-```less
+```css
 #app {
     height: 100%;
     display: grid;
@@ -88,7 +88,7 @@ Then modify the main **#app** definition. You are setting up the grid here. And 
 
 Now add the definition for the **selected** attribute. This belongs on the bottom of the main **#app** definition.
 
-```less
+```css
 #app {
     &[selected="true"] {
         .menu {
@@ -108,7 +108,7 @@ Now add the definition for the **selected** attribute. This belongs on the botto
 
 Then modify the **.nav** definition.
 
-```less
+```css
 .nav {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -119,7 +119,7 @@ Then modify the **.nav** definition.
 
 And finally modify the **.menu** definition.
 
-```less
+```css
 .menu {
     grid-column-start: 1;
     grid-column-end: 3;
