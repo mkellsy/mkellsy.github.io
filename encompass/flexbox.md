@@ -1,3 +1,5 @@
+**Flexbox Layout** - [Setup Navigation](/encompass/setup-navigation) - [Interactive Elements](/encompass/interactive-elements) - [Improving Flow](/encompass/improving-flow) - [Grid Layout](/encompass/grid-layout) - [Dynamic Items](/encompass/dynamic-items) - [Search](/encompass/search) - [Responsive Content](/encompass/responsive-content) - [Complete Code](/encompass/complete-code)
+
 # Layout Using Flexbox
 First create youir dashboard.
 
