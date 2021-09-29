@@ -1,4 +1,4 @@
-[Flexbox](/encompass/flexbox) - **Grids** - [Boilerplate](/encompass/boilerplate) - [Responsive Content](/encompass/responsive-content)
+[Introduction](/encompass/introduction) - [Flexbox](/encompass/flexbox) - **Grids** - [Boilerplate](/encompass/boilerplate) - [Responsive Content](/encompass/responsive-content) - [Conclusion](/encompass/conclusion)
 
 # Layout Using Grids
 You got the flexbox version to work. Grids are better for layouts. Grids give you more control over the layout from CSS. This helps with reactive interfaces.
