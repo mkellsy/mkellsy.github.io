@@ -3,7 +3,7 @@
 # Layout Using Flexbox
 First create youir dashboard.
 
-1. First create a new dashboard. Set the name to **Mobile-First** and the category to **Training**.
+1. First create a new dashboard. Set the name to **Mobile-First (Flex)** and the category to **Training**.
 2. Then select the **Blank** layout.
 3. Add a **Code Block** item.
 
