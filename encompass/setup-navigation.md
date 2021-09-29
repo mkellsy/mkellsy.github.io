@@ -1,3 +1,5 @@
+[Flexbox](/encompass/flexbox) - **Navigation** - [Items](/encompass/interactive-elements) - [Flow](/encompass/improving-flow) - [Grids](/encompass/grid-layout) - [Dynamic Items](/encompass/dynamic-items) - [Search](/encompass/search) - [Responsive Content](/encompass/responsive-content) - [Complete Code](/encompass/complete-code)
+
 # Setup Navigation
 This is common code I use for all my dashboards. It handles all necessary browser navigation using a `state` object.
 
