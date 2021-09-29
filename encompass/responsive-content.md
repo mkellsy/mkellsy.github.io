@@ -21,7 +21,7 @@ Modify the HTML. Modify the **content** element, add the **info** and **image** 
 ### CSS
 First we need to modify the **.content** definition in the **.body** definition. You need to modify the display so we can show the info and image side-by-side. Then add an overlayed responsive definition that converts the layout to a top-and-bottom display.
 
-```less
+```css
 .content {
     display: flex;
     align-items: flex-start;
@@ -46,7 +46,7 @@ First we need to modify the **.content** definition in the **.body** definition.
 
 Then add the new **.info** definition to the **.content** definition.
 
-```less
+```css
 .content {
     .info {
         flex: 1;
@@ -76,7 +76,7 @@ Then add the new **.info** definition to the **.content** definition.
 
 Finally we need to define the **.button** element.
 
-```less
+```css
 .content {
     .image {
         padding: 20px;
@@ -172,3 +172,6 @@ function DisplayItem(ItemID, Search) {
 
 ## Save
 Now let's save. Remember to test, make sure the coverage is at 100%.
+
+## Next
+[Complete Code](/encompass/complete-code)
