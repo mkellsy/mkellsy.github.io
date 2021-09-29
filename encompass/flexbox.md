@@ -47,6 +47,10 @@ Add this code to the CSS tab.
         .menu {
             width: 200px;
             background: #66c;
+
+            @media (min-width: 0px) and (max-width: 815px) {
+                display: none;
+            }
         }
 
         .content {
