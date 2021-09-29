@@ -1,4 +1,4 @@
-**Flexbox** - [Navigation](/encompass/setup-navigation) - [Items](/encompass/interactive-elements) - [Flow](/encompass/improving-flow) - [Grids](/encompass/grid-layout) - [Dynamic Items](/encompass/dynamic-items) - [Search](/encompass/search) - [Responsive Content](/encompass/responsive-content) - [Complete Code](/encompass/complete-code)
+**Flexbox** - [Grids](/encompass/grids)
 
 # Layout Using Flexbox
 First create youir dashboard.
@@ -28,7 +28,7 @@ Add this code to the HTML tab.
 ### CSS
 Add this code to the CSS tab.
 
-```css
+```less
 #app {
     height: 100%;
     display: flex;
@@ -75,4 +75,4 @@ Save the dashboard as released. This ensures the code gets committed. Remember t
 Then go to the [Training Dashboards](https://support.encompass8.com/Home?DashboardID=100100&TableName=ZZ_TrainingDashboards) table and add your bashboard to the list.
 
 ## Next
-[Setup Navigation](/encompass/setup-navigation)
+[Grids](/encompass/grids)
