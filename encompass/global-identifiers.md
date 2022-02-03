@@ -131,3 +131,51 @@ Response
 > Note these identifiers are global they will differ from the distributor's reported ids.
 
 ## List Products
+You will need the global product ids to interact with most endpoints dealing with products. This endpoint will display the products a distributor carries with the global ids.
+
+Request
+```sh
+GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=
+[Prefix]_ListGlobalProducts&EncompassID=DSDLink&DistributorID=[Distributor ID]
+```
+
+| Parameter | Type | Required | Notes |
+| --- | --- | --- | --- |
+| APIToken | String | Yes | Assigned API token |
+| Prefix | String | Yes | Assigned prefix |
+| DistributorID | String | Yes | The distributor you wish to view |
+
+Response
+```json
+[{
+    "ProductID": 123456,
+    "ProductNum": "ABC123",
+    "SupplierID": 123456,
+    "Supplier": "South Park Brewery",
+    "ProductName": "Timmy's Root Beer Ale",
+    "Package": "12 pack 24oz Cans",
+    "CaseEquiv": 288.00,
+    "Ounces": 288.00,
+    "CaseUPC": "0-99999-99999-9",
+    "CarrierUPC": "0-99999-99999-9",
+    "UnitUPC": "0-99999-99999-9",
+    "ABV": "0.0%"
+}]
+```
+
+| Field | Type | Null | Notes |
+| --- | --- | --- | --- |
+| ProductID | Integer | No | Unique ID for the product |
+| ProductNum | String | No | Supplier SKU |
+| SupplierID | Integer | No | Unique ID for the supplier |
+| Supplier | String | No | Supplier name |
+| ProductName | String | No | Product name |
+| Package | String | No | Package description |
+| CaseEquiv | Number | Yes | Case equivalence |
+| Ounces | Number | Yes | Ounces ber unit |
+| CaseUPC | String | Yes | UPC of the wholesale case |
+| CarrierUPC | String | Yes | UPC of the retail case |
+| UnitUPC | String | Yes | UPC of the individual can/bottle |
+| ABV | String | Yes | Alcohol by volume |
+
+> Note these identifiers are global they will differ from the distributor's reported ids.
