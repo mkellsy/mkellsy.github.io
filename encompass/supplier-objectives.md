@@ -122,7 +122,7 @@ Response
     "Status": "Success",
     "Errors": [],
     "Warnings": [
-        "2 Records were skipped because Fields [...] do not allow duplicates due to Unique Multi Column Index configuration."
+        "2 Records were skipped because Fields [...] do not allow duplicates."
     ]
 }
 ```
@@ -323,7 +323,7 @@ Response
     "Status": "Success",
     "Errors": [],
     "Warnings": [
-        "2 Records were skipped because Fields [...] do not allow duplicates due to Unique Multi Column Index configuration."
+        "2 Records were skipped because Fields [...] do not allow duplicates."
     ]
 }
 ```
