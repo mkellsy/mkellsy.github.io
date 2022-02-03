@@ -47,6 +47,7 @@ GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=
 | APIToken | String | Yes | Assigned API token |
 | Prefix | String | Yes | Assigned prefix |
 
+Response
 ```json
 [{
     "DistributorID": "SouthPark",
@@ -80,5 +81,51 @@ GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=
 | Website | String | Yes | Location/Distributor website address |
 
 ## List Retailers
+Some endpoints require a Retailer ID. You can use this endpoint to view this data.
+
+Due to the how large this list is, you must provide a Distributor ID to view the retailer list.
+
+Request
+```sh
+GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=
+[Prefix]_ListRetailers&EncompassID=DSDLink&DistributorID=[Distributor ID]
+```
+
+| Parameter | Type | Required | Notes |
+| --- | --- | --- | --- |
+| APIToken | String | Yes | Assigned API token |
+| Prefix | String | Yes | Assigned prefix |
+| DistributorID | String | Yes | The distributor you wish to view |
+
+Response
+```json
+[{
+    "RetailerID": 123456,
+    "Retailer": "Timmy's House",
+    "RetailerType": "Club",
+    "Chain": "Default Chain",
+    "StoreNum": null,
+    "Address": "112 W Kiowa Ave",
+    "City": "South Park",
+    "State": "CO",
+    "PostalCode": "80526",
+    "LicenseNum": "123ABC"
+}]
+```
+
+| Field | Type | Null | Notes |
+| --- | --- | --- | --- |
+| RetailerID | Integer | No | Unique ID for the retailer |
+| Retailer | String | No | Retailer name |
+| RetailerType | String | No | Retailer type |
+| Chain | String | Yes | The retailers chain will show here |
+| StoreNum | String | Yes | If the retailer is part of a chain their store number will be here |
+| Address | String | No | Retailer address |
+| City | String | No | Retailer city |
+| State | String | No | Retailer state |
+| PostalCode | String | No | Retailer postal code |
+| LicenseNum | String | Yes | Ratailer state license number |
+
+> Note these identifiers are global they will differ from the distributor's reported ids.
 
 ## List Products
