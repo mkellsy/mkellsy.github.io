@@ -25,7 +25,7 @@ Response
 },{
     "SupplierID": 456,
     "Supplier": "Professor Chaos Beverage"
-]}
+}]
 ```
 
 | Field | Type | Null | Notes |
