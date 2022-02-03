@@ -8,8 +8,8 @@ This endpoint will give you access to the IDs for each supplier attached to your
 
 Request
 ```sh
-GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=[Prefix]_ListSuppliers&
-EncompassID=DSDLink
+GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=
+[Prefix]_ListSuppliers&EncompassID=DSDLink
 ```
 
 | Parameter | Type | Required | Notes |
@@ -38,8 +38,8 @@ You will need access to the unique distributor location for some records. This e
 
 Request
 ```sh
-GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=[Prefix]_ListDistributors&
-EncompassID=DSDLink
+GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=
+[Prefix]_ListDistributors&EncompassID=DSDLink
 ```
 
 | Parameter | Type | Required | Notes |
