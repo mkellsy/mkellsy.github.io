@@ -30,7 +30,10 @@ Response
 | --- | --- | --- | --- |
 | ObjectiveTypeID | Integer | No | Record key |
 | ObjectiveType | String | No | Used when creating objectives |
-
+  
+  
+  
+  
 ## List Objectives
 Objectives descript the task. Each objective may contain multiple retailers, products and distributors. For example, an objective may be a "placement gap", "chain mandate" or a "display survey".
 
