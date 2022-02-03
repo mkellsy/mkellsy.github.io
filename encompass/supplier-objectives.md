@@ -30,10 +30,7 @@ Response
 | --- | --- | --- | --- |
 | ObjectiveTypeID | Integer | No | Record key |
 | ObjectiveType | String | No | Used when creating objectives |
-  
-  
-  
-  
+
 ## List Objectives
 Objectives descript the task. Each objective may contain multiple retailers, products and distributors. For example, an objective may be a "placement gap", "chain mandate" or a "display survey".
 
@@ -78,6 +75,7 @@ Request
 ```sh
 POST: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=
 [Prefix]_CreateObjective&EncompassID=DSDLink&SupplierID=[Supplier ID]
+
 Content Type: application/json
 ```
 
@@ -236,6 +234,7 @@ Request
 POST: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=
 [Prefix]_CreateObjectiveSchedule&EncompassID=DSDLink&ObjectiveID=
 [Objective ID]
+
 Content Type: application/json
 ```
 
