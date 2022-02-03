@@ -80,6 +80,8 @@ Response
 | Email | String | Yes | Primary contact email address |
 | Website | String | Yes | Location/Distributor website address |
 
+> Note a distributor id and distributor number may show up more than once in this data. A distributor may have multiple locations reporting under the same number.
+
 ## List Retailers
 Some endpoints require a Retailer ID. You can use this endpoint to view this data.
 
