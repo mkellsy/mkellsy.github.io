@@ -2,9 +2,7 @@
 Global identifiers is a set of endpoints designed to give you the required information to interact with other endpoints.
 
 ## List Suppliers
-You will be assigned a vendor ID. This ID seperates you from other vendors on Orchestra Connect. However some systems like objectives are seperated by supplier. We know that you may have multiple suppliers and will need to interact with the data in different ways.
-
-This endpoint will give you access to the IDs for each supplier attached to your vendor ID. Also note that your vendor ID is tied to your Prefix.
+We know that you may have multiple suppliers and will need to interact with the data in different ways. This endpoint will give you access to the IDs for each unique supplier you may have.
 
 Request
 ```sh
