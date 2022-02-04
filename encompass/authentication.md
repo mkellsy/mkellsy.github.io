@@ -17,8 +17,8 @@ Each endpoint will have an [API Token] field. We will only send you the token on
 
 You will need to replace the [API Token] field in each endpoint.
 
-## Verbs
-HTTP verbs. Each request displayed in this specification will have the HTTP verb listed in front of the URL. If the verb is POST, there will also be a content type header listed, as well as an example of the POST body and a validation schema.
+## HTTP Verbs
+Each request displayed in this specification will have the HTTP verb listed in front of the URL. If the verb is POST, there will also be a content type header listed, as well as an example of the POST body and a validation schema.
 
 Validation schemas are standard schemas as defined by [https://json-schema.org](https://json-schema.org/).
 
