@@ -247,7 +247,7 @@ Request Body (Target by Retailer Type/Chain)
     "OnPremise": false,
     "DraftPackage": "Draft and Package",
     "HasDisplays": false,
-    "Products": [123456789,987654321]
+    "Products": "123456789,987654321"
 }]
 ```
 
@@ -262,7 +262,7 @@ Request Body (Target by Retailer Type/Chain)
 | OnPremise | Boolean | Yes | Target tasks by on or off premise |
 | DraftPackage | String | Yes | Target tasks by draft present or not (Draft and Package, Draft Only, Package Only) |
 | HasDisplays | Boolean | Yes | Target tasks by if the retailer allows displays or not |
-| Products | Array | Yes | Array of product IDs to attach (Global Identifier) |
+| Products | Array | Yes | Comma seperated string of product IDs to attach (Global Identifier) |
 
 Request Body (Target by Single Retailer)
 ```json
@@ -271,7 +271,7 @@ Request Body (Target by Single Retailer)
     "EndDate": "2022-11-07",
     "DistributorLocation": 3,
     "RetailerID": 1042185126,
-    "Products": [123456789]
+    "Products": "12345,67890"
 }]
 ```
 
@@ -281,7 +281,7 @@ Request Body (Target by Single Retailer)
 | EndDate | Date YYYY-MM-DD | No | Date the task will be created if approved |
 | DistributorLocation | Integer | No | Unique distributor location ID (Global Identifier) |
 | RetailerID | Integer | No | Retailer the schedule is targeting (Global Identifier) |
-| Products | Array | Yes | Array of product IDs to attach (Global Identifier) |
+| Products | String | Yes | Comma seperated string of product IDs to attach (Global Identifier) |
 
 Validation Schema
 ```json
@@ -301,10 +301,7 @@ Validation Schema
             "OnPremise":  { "type": "boolean" },
             "DraftPackage":  { "type": "string" },
             "HasDisplays":  { "type": "boolean" },
-            "Products":  {
-                "type": "aray",
-                "items": { "type": "number" }
-            }
+            "Products":  { "type": "string" }
         }
     }
 }
