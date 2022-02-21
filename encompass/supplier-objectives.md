@@ -6,7 +6,8 @@ Objective types are a defined set of types used to catagorize objectives.
 
 Request
 ```sh
-GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=[Prefix]_ListObjectiveTypes&EncompassID=DSDLink
+GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=  
+[Prefix]_ListObjectiveTypes&EncompassID=DSDLink
 ```
 
 | Parameter | Type | Required | Notes |
@@ -39,7 +40,8 @@ You will need to use this endpoint to obtain the "ObjectiveID" which is used to 
 
 Request
 ```sh
-GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=[Prefix]_ListObjectives&EncompassID=DSDLink
+GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=  
+[Prefix]_ListObjectives&EncompassID=DSDLink
 ```
 
 | Parameter | Type | Required | Notes |
@@ -71,7 +73,9 @@ For example, an objective can represent a single program like "Placement Gaps" o
 
 Request
 ```sh
-POST: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=[Prefix]_CreateObjective&EncompassID=DSDLink&SupplierID=[Supplier ID]
+POST: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=  
+[Prefix]_CreateObjective&EncompassID=DSDLink&SupplierID=[Supplier ID]  
+
 Content Type: application/json
 ```
 
@@ -144,7 +148,8 @@ This will return any schedule that is set to end today or in the future.
 
 Request
 ```sh
-GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=[Prefix]_ListObjectiveSchedule&EncompassID=DSDLink&ObjectiveID=[Objective ID]
+GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=  
+[Prefix]_ListObjectiveSchedule&EncompassID=DSDLink&ObjectiveID=[Objective ID]
 ```
 
 | Parameter | Type | Required | Notes |
@@ -225,7 +230,9 @@ This is the endpoint to schedule objectives. This endpoint will not duplicate da
 
 Request
 ```sh
-POST: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=[Prefix]_CreateObjectiveSchedule&EncompassID=DSDLink&ObjectiveID=[Objective ID]
+POST: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=  
+[Prefix]_CreateObjectiveSchedule&EncompassID=DSDLink&ObjectiveID=[Objective ID]  
+
 Content Type: application/json
 ```
 
