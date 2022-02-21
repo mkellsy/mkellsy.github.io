@@ -6,7 +6,8 @@ We know that you may have multiple suppliers and will need to interact with the 
 
 Request
 ```sh
-GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=[Prefix]_ListSuppliers&EncompassID=DSDLink
+GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=  
+[Prefix]_ListSuppliers&EncompassID=DSDLink
 ```
 
 | Parameter | Type | Required | Notes |
@@ -35,7 +36,8 @@ You will need access to the unique distributor location for some records. This e
 
 Request
 ```sh
-GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=[Prefix]_ListDistributors&EncompassID=DSDLink
+GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=  
+[Prefix]_ListDistributors&EncompassID=DSDLink
 ```
 
 | Parameter | Type | Required | Notes |
@@ -85,7 +87,8 @@ Due to the how large this list is, you must provide a Distributor ID to view the
 
 Request
 ```sh
-GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=[Prefix]_ListRetailers&EncompassID=DSDLink&DistributorID=[Distributor ID]
+GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=  
+[Prefix]_ListRetailers&EncompassID=DSDLink&DistributorID=[Distributor ID]
 ```
 
 | Parameter | Type | Required | Notes |
@@ -130,7 +133,8 @@ You will need the global product ids to interact with most endpoints dealing wit
 
 Request
 ```sh
-GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=[Prefix]_ListGlobalProducts&EncompassID=DSDLink&DistributorID=[Distributor ID]
+GET: https://api.encompass8.com/api?APIToken=[API Token]&APICommand=  
+[Prefix]_ListGlobalProducts&EncompassID=DSDLink&DistributorID=[Distributor ID]
 ```
 
 | Parameter | Type | Required | Notes |
